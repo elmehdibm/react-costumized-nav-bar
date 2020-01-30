@@ -344,12 +344,9 @@ export class Bar extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState){
-    if(nextProps.initialValue && prevState.arrayisactiveitem[nextProps.initialValue] === false){
-      return {arrayisactiveitem: constructArrayIsActiveItem(nextProps.children,
-        nextProps.initialValue ? nextProps.initialValue : 0
-      )};
-    }
-    return null;
+    return {arrayisactiveitem: constructArrayIsActiveItem(nextProps.children,
+      nextProps.initialValue ? nextProps.initialValue : 0
+    )};
   }
 
   updateBarItem = key => isActive => {
