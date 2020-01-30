@@ -1,6 +1,6 @@
 {
   "name": "react-costumized-nav-bar",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "It's a light component manager helper to manage switching off/on light on web elements",
   "main": "index.js",
   "scripts": {
