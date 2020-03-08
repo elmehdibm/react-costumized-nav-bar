@@ -29,8 +29,7 @@ Let's Begin  😎 !
 ## Introduction
 ------
 
-
-A small Text
+Look at this awesome menu bar done by this lib (I'm sure bleach fans will understand this names 😂 )
 <!-- Here A gif that demonstrate the outcome of the lib -->
 <img src="./images/animated gif demo nav bar.gif">
 
