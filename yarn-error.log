@@ -1,0 +1,63 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js publish
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Calibre2\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft VS Code\bin;;C:\Program Files\Microsoft VS Code\bin;C:\Users\Mehdi\AppData\Local\Yarn\bin;C:\Users\Mehdi\AppData\Roaming\npm;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  10.15.0
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "react-costumized-nav-bar",
+    "version": "1.0.22",
+    "description": "It's a light component manager helper to manage switching off/on light on web elements",
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/elmehdibm/react-costumized-nav-bar.git"
+    },
+    "keywords": [
+      "navigation",
+      "bar",
+      "vertical bar",
+      "horizontal bar",
+      "menu",
+      "costumized"
+    ],
+    "author": "ElMehdibm",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/elmehdibm/react-costumized-nav-bar/issues"
+    },
+    "homepage": "https://github.com/elmehdibm/react-costumized-nav-bar/#readme",
+    "dependencies": {
+      "react": "^16.8.6",
+      "webpack": "^4.25.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:128791:13)
+      at Interface.emit (events.js:182:13)
+      at Interface._ttyWrite (readline.js:783:16)
+      at ReadStream.onkeypress (readline.js:168:10)
+      at ReadStream.emit (events.js:182:13)
+      at emitKeys (internal/readline.js:424:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1022:36)
+      at ReadStream.emit (events.js:182:13)
+      at addChunk (_stream_readable.js:283:12)
