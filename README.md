@@ -248,13 +248,12 @@ import {Bar, BarItem, SubBarItem} from 'react-costumized-nav-bar';
 ```
 The output result :
 
-<img src="./images/example2.PNG">
+![image](https://drive.google.com/uc?export=view&id=145_5E5FhPjtOoTmnKSEY6I4ZrehUjUNB)<br>
 
 The Explanation :
 
-<img src="./images/explanation1.PNG">
+![image](https://drive.google.com/uc?export=view&id=1xNaPX_JidCGrpRPjOSbr216hBxAR1_9e)<br>
 
-<br>
 <div id="author">
 
 ## Authors
