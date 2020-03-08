@@ -1,628 +1,162 @@
-import React from "react";
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./index.js");
+/******/ })
+/************************************************************************/
+/******/ ({
 
-// The Keys :
-const KeyBarItem = "bar-item-mdx";
+/***/ "./index.js":
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
+/*! exports provided: indexActiveTab, arrayIsActiveItems, SubBarItem, BarItem, Bar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// The Tag that is showed in the console to specify the log of the library
-const Tag = "[react-costumized-nav-bar]";
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"indexActiveTab\", function() { return indexActiveTab; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"arrayIsActiveItems\", function() { return arrayIsActiveItems; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"SubBarItem\", function() { return SubBarItem; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"BarItem\", function() { return BarItem; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Bar\", function() { return Bar; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\nvar _Colors;\n\nfunction _typeof(obj) { if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nfunction ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) { return call; } return _assertThisInitialized(self); }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function\"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n // The Keys :\n\nvar KeyBarItem = \"bar-item-mdx\"; // The Tag that is showed in the console to specify the log of the library\n\nvar Tag = \"[react-costumized-nav-bar]\"; // Global Variable that contain the index of the active Tab\n\nvar indexActiveTab = 0;\nvar arrayIsActiveItems = [];\n\nvar paperStyle = function paperStyle(itemRef, subitemStyle, isChildrenExist) {\n  if (isChildrenExist && itemRef && itemRef.current && itemRef.current.offsetHeight && itemRef.current.offsetWidth && itemRef.current.offsetTop && itemRef.current.offsetLeft) {\n    return {\n      \"position\": \"absolute\",\n      \"top\": itemRef.current.offsetTop + itemRef.current.offsetHeight,\n      \"left\": itemRef.current.offsetLeft,\n      \"minWidth\": itemRef.current.offsetWidth,\n      \"display\": \"grid\"\n    };\n  }\n\n  return {\n    \"display\": \"none\"\n  };\n};\n\nvar SubBarItem =\n/*#__PURE__*/\nfunction (_React$Component) {\n  _inherits(SubBarItem, _React$Component);\n\n  function SubBarItem(props) {\n    var _this;\n\n    _classCallCheck(this, SubBarItem);\n\n    _this = _possibleConstructorReturn(this, _getPrototypeOf(SubBarItem).call(this, props));\n\n    _defineProperty(_assertThisInitialized(_this), \"onClickFunc\", function () {\n      var _this$props = _this.props,\n          onClick = _this$props.onClick,\n          updateBarItem = _this$props.updateBarItem;\n      updateBarItem(true);\n\n      if (onClick) {\n        onClick();\n      }\n    });\n\n    _this.state = {\n      \"isHovered\": false\n    };\n    return _this;\n  }\n\n  _createClass(SubBarItem, [{\n    key: \"shouldComponentUpdate\",\n    value: function shouldComponentUpdate(nextProps, nextState) {\n      if (this.state.isHovered === nextState.isHovered) {\n        return false;\n      }\n\n      return true;\n    }\n  }, {\n    key: \"render\",\n    value: function render() {\n      var _this2 = this;\n\n      var _this$props2 = this.props,\n          index = _this$props2.index,\n          title = _this$props2.title,\n          hideSubs = _this$props2.hideSubs,\n          style = _this$props2.style;\n      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        id: \"sub-item-\" + index,\n        onMouseOut: function onMouseOut(event) {\n          _this2.setState({\n            \"isHovered\": false\n          });\n\n          var predicate = event.pageY >= event.target.parentNode.offsetTop + event.target.parentNode.offsetHeight || event.pageY <= event.target.parentNode.offsetTop || event.pageX <= event.target.parentNode.offsetLeft || event.pageX >= event.target.parentNode.offsetLeft + event.target.parentNode.offsetWidth;\n\n          if (predicate) {\n            hideSubs();\n          }\n        },\n        onMouseOver: function onMouseOver() {\n          return _this2.setState({\n            \"isHovered\": true\n          });\n        },\n        onClick: this.onClickFunc,\n        style: this.state.isHovered ? style.active : style.inactive\n      }, title ? title : \"Empty Title\");\n    }\n  }]);\n\n  return SubBarItem;\n}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);\n;\nvar BarItem =\n/*#__PURE__*/\nfunction (_React$Component2) {\n  _inherits(BarItem, _React$Component2);\n\n  function BarItem(props) {\n    var _this3;\n\n    _classCallCheck(this, BarItem);\n\n    _this3 = _possibleConstructorReturn(this, _getPrototypeOf(BarItem).call(this, props));\n\n    _defineProperty(_assertThisInitialized(_this3), \"setHover\", function (isHovered) {\n      return function (event) {\n        var predicate = event.pageY >= event.target.offsetTop && event.pageX > event.target.offsetLeft && event.pageX < event.target.offsetLeft + event.target.offsetWidth;\n\n        _this3.setState({\n          'showSubs': predicate || isHovered\n        });\n\n        _this3.setState({\n          isHovered: isHovered\n        });\n      };\n    });\n\n    _defineProperty(_assertThisInitialized(_this3), \"switchTab\", function (onClickFunc) {\n      return function () {\n        if (_this3.props.isTabActive === false && (_this3.props.isDisabled === undefined || _this3.props.isDisabled === false)) {\n          if (onClickFunc && typeof onClickFunc === \"function\") {\n            onClickFunc();\n          }\n\n          _this3.props.updateBarItem(true);\n        }\n      };\n    });\n\n    _defineProperty(_assertThisInitialized(_this3), \"hideSubs\", function () {\n      return _this3.setState({\n        'showSubs': false\n      });\n    });\n\n    _this3.state = {\n      'isHovered': false,\n      'showSubs': false,\n      'keyState': KeyBarItem\n    };\n    _this3.myRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();\n    return _this3;\n  }\n\n  _createClass(BarItem, [{\n    key: \"shouldComponentUpdate\",\n    value: function shouldComponentUpdate(nextProps, nextState) {\n      if (this.props.title !== nextProps.title) {\n        return true;\n      }\n\n      if (this.props.isTabActive !== undefined && nextProps.isTabActive !== undefined && this.props.isTabActive === nextProps.isTabActive && this.state.isHovered === nextState.isHovered && this.state.showSubs === nextState.showSubs) {\n        return false;\n      }\n\n      return true;\n    }\n  }, {\n    key: \"render\",\n    value: function render() {\n      var _this4 = this;\n\n      var _this$props3 = this.props,\n          isTabActive = _this$props3.isTabActive,\n          style = _this$props3.style,\n          updateBarItem = _this$props3.updateBarItem,\n          onClick = _this$props3.onClick,\n          title = _this$props3.title,\n          isDisabled = _this$props3.isDisabled,\n          styles = _this$props3.styles;\n      var _this$state = this.state,\n          isHovered = _this$state.isHovered,\n          showSubs = _this$state.showSubs;\n      var AllElements = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, Array.isArray(this.props.children) ? this.props.children.map(function (element, index) {\n        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {\n          key: index\n        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(element, {\n          index: index,\n          hideSubs: _this4.hideSubs,\n          style: styles.subItem,\n          updateBarItem: _this4.props.updateBarItem\n        }));\n      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, this.props.children && react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(this.props.children, {\n        \"index\": 0,\n        hideSubs: this.hideSubs,\n        style: styles.subItem,\n        updateBarItem: this.props.updateBarItem\n      })));\n      var addedStyle = style ? style : {};\n      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        ref: this.myRef,\n        onMouseOver: this.setHover(true),\n        onMouseOut: this.setHover(false),\n        onClick: this.switchTab(onClick),\n        style: isTabActive || isHovered ? _objectSpread({}, styles.item.active, {}, addedStyle) : _objectSpread({}, styles.item.inactive, {}, addedStyle)\n      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, title ? title : \"Empty Title\")), showSubs && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        onMouseOut: function onMouseOut(event) {\n          if (event && event.relatedTarget && event.relatedTarget.id && !event.relatedTarget.id.includes(\"sub-item\")) {\n            _this4.hideSubs();\n          }\n        },\n        style: paperStyle(this.myRef, styles.subItem, this.props.children !== undefined)\n      }, AllElements));\n    }\n  }]);\n\n  return BarItem;\n}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);\n\nvar constructArrayIsActiveItem = function constructArrayIsActiveItem(elements, keyItemValue, arrayisactiveitem) {\n  if (keyItemValue === undefined && arrayisactiveitem) {\n    return arrayisactiveitem;\n  }\n\n  var length = 0;\n\n  if (Array.isArray(elements)) {\n    elements.forEach(function (element) {\n      if (element.type && typeof element.type === \"function\") {\n        length++;\n      }\n    });\n  }\n\n  var array = new Array(length).fill(false);\n\n  if (array.length > keyItemValue) {\n    array[keyItemValue] = true;\n  }\n\n  ;\n  return array;\n}; // Checking Errors for the props theme\n\n\nvar checkThemeObjectWarningsAndErrors = function checkThemeObjectWarningsAndErrors(objectTheme) {};\n\nvar checkBarPropsWarningsAndErrors = function checkBarPropsWarningsAndErrors(props) {\n  if (props.type !== undefined && ![\"horizontal\", \"vertical\"].includes(props.type)) {\n    throw new Error(\"Props Input Error :\" + \"\\n- 'type' prop of bar error\" + \"\\n=> Valid Entries are : horizontal, verical\");\n  }\n\n  if (props.type !== undefined && props.type === \"vertical\" && props.width === undefined) {\n    console.warn(Tag + \" The Width of Vertical Bar is missing (40px is the default value) !\");\n  }\n\n  if (props.type !== undefined && props.type === \"horizontal\" && props.height === undefined) {\n    console.warn(Tag + \" The Height of Horizontal Bar is missing (40px is the default value) !\");\n  }\n\n  if (props.theme === undefined) {\n    console.log(Tag + \" For more stylish look, Note that you can provide the bar with themes check this link => \");\n  }\n};\n\nvar BarStyle = function BarStyle() {\n  var type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : \"horizontal\";\n  var itemsPosition = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : \"left\";\n  var verticalBarWidth = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : \"85px\";\n  var horizontalBarHeight = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : \"40px\";\n  var otherStyles = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};\n  var forceStyle = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : false;\n  var stylesFromThemeObject = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : {};\n\n  if (type === undefined) {\n    type = \"horizontal\";\n  }\n\n  ;\n\n  if (itemsPosition === undefined) {\n    itemsPosition = \"left\";\n  }\n\n  ;\n\n  if (verticalBarWidth === undefined) {\n    verticalBarWidth = \"85px\";\n  }\n\n  ;\n\n  if (horizontalBarHeight === undefined) {\n    horizontalBarHeight = \"40px\";\n  }\n\n  ;\n\n  if (otherStyles === undefined) {\n    otherStyles = {};\n  }\n\n  ;\n\n  if (forceStyle === undefined) {\n    forceStyle = false;\n  }\n\n  ;\n\n  if (stylesFromThemeObject === undefined) {\n    stylesFromThemeObject = {};\n  }\n\n  ;\n  var style = {\n    display: \"flex\",\n    justifyContent: itemsPosition\n  };\n\n  if (type === \"vertical\") {\n    style = _objectSpread({}, style, {\n      width: verticalBarWidth,\n      height: \"100%\",\n      \"flexDirection\": \"column\"\n    });\n  } else if (type === \"horizontal\") {\n    style = _objectSpread({}, style, {\n      width: \"100%\",\n      height: horizontalBarHeight + \"px\"\n    });\n  }\n\n  if (forceStyle) {\n    return _objectSpread({}, style, {}, stylesFromThemeObject, {}, otherStyles);\n  }\n\n  return _objectSpread({}, otherStyles, {}, style, {}, stylesFromThemeObject);\n}; // It's the global/Prarent class Bar that we render\n\n\nvar Bar =\n/*#__PURE__*/\nfunction (_React$Component3) {\n  _inherits(Bar, _React$Component3);\n\n  function Bar(props) {\n    var _this5;\n\n    _classCallCheck(this, Bar);\n\n    _this5 = _possibleConstructorReturn(this, _getPrototypeOf(Bar).call(this, props));\n\n    _defineProperty(_assertThisInitialized(_this5), \"updateBarItem\", function (key) {\n      return function (isActive) {\n        var arrayisactiveitem = _this5.state.arrayisactiveitem;\n        arrayisactiveitem.fill(false);\n        arrayisactiveitem[key] = isActive;\n        indexActiveTab = key;\n\n        _this5.setState({\n          arrayisactiveitem: arrayisactiveitem\n        });\n\n        arrayIsActiveItems = arrayisactiveitem;\n      };\n    });\n\n    var themeObject = {};\n    var type = \"horizontal\";\n\n    if (props.theme !== undefined) {\n      themeObject = props.theme;\n    }\n\n    if (props.type !== undefined) {\n      type = props.type;\n    }\n\n    var array = constructArrayIsActiveItem(props.children, props.keyItemValue ? props.keyItemValue : 0);\n    _this5.state = {\n      arrayisactiveitem: array,\n      themeObject: themeConstruction(themeObject, type)\n    };\n    arrayIsActiveItems = array;\n    return _this5;\n  }\n\n  _createClass(Bar, [{\n    key: \"render\",\n    value: function render() {\n      var _this6 = this;\n\n      // Here it will Process The Children And\n      // The Props : Styles , Some Style Logics (showing the underline or not)\n      var _this$state2 = this.state,\n          arrayisactiveitem = _this$state2.arrayisactiveitem,\n          themeObject = _this$state2.themeObject;\n      var indexItemBar = -1;\n      checkBarPropsWarningsAndErrors(this.props);\n      var _this$props4 = this.props,\n          type = _this$props4.type,\n          itemsPosition = _this$props4.itemsPosition,\n          width = _this$props4.width,\n          height = _this$props4.height,\n          style = _this$props4.style,\n          forceStyle = _this$props4.forceStyle,\n          itemWidth = _this$props4.itemWidth;\n      themeObject.barItem[\"active\"][\"width\"] = itemWidth ? itemWidth + \"px\" : \"auto\";\n      themeObject.barItem[\"inactive\"][\"width\"] = itemWidth ? itemWidth + \"px\" : \"auto\";\n      var AllElements = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, Array.isArray(this.props.children) && this.props.children.map(function (element, index) {\n        // Must Refine this condition :\n        if (element.type && typeof element.type === \"function\") {\n          indexItemBar++;\n          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {\n            key: index\n          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(element, {\n            styles: {\n              \"item\": themeObject.barItem,\n              \"subItem\": themeObject.subBarItem\n            },\n            isTabActive: arrayisactiveitem[indexItemBar],\n            updateBarItem: _this6.updateBarItem(indexItemBar)\n          }));\n        }\n\n        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n          key: index\n        }, element);\n      }));\n      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n        style: BarStyle(type, itemsPosition, width, height, style, forceStyle, themeObject.bar)\n      }, AllElements);\n    }\n  }], [{\n    key: \"getDerivedStateFromProps\",\n    value: function getDerivedStateFromProps(nextProps, prevState) {\n      return {\n        arrayisactiveitem: constructArrayIsActiveItem(nextProps.children, nextProps.keyItemValue, prevState.arrayisactiveitem)\n      };\n    }\n  }]);\n\n  return Bar;\n}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component); // This is a work to create commercialized Components for better styling\n// This Work will be derived in an independant library for theming\n// And Creating Things more stylishly For All Libraries\n// Theme Section\n// Must Handle Error of The Structure of The Theme Styles :\n// Palette Color\n\nvar Colors = (_Colors = {\n  // From FlatUI Colors :\n  // From White to grey ( Lighted Colors )\n  \"cloud\": \"#ecf0f1\",\n  \"silver\": \"#bdc3c7\",\n  \"concrete\": \"#95a5a6\",\n  \"asbestos\": \"#7f8c8d\",\n  // Dark Colors\n  \"wet-asphalt\": \"#34495e\",\n  \"midnight-blue\": \"#2c3e50\"\n}, _defineProperty(_Colors, \"silver\", \"#bdc3c7\"), _defineProperty(_Colors, \"sky-blue\", \"rgb(88, 140, 198)\"), _Colors);\nvar ColorPalettesStyles = {\n  \"standard-v1\": {\n    \"innerShadowBarColor\": Colors[\"midnight-blue\"],\n    \"innerShadowBarItemColor\": Colors[\"midnight-blue\"],\n    \"innerShadowSubBarItemColor\": \"black\",\n    \"borderBarColor\": Colors[\"midnight-blue\"],\n    \"barColor\": Colors[\"cloud\"],\n    \"activeBarTextColor\": Colors[\"midnight-blue\"],\n    \"inactiveBarTextColor\": Colors[\"wet-asphalt\"],\n    \"subBarColor\": Colors[\"sky-blue\"],\n    \"activeSubBarTextColor\": \"white\",\n    \"inactiveSubBarTextColor\": \"white\",\n    \"underlineSubBar\": \"none\",\n    \"activeBoxColor\": \"none\",\n    \"inactiveBoxColor\": \"none\",\n    \"underlineBoxColor\": Colors[\"midnight-blue\"]\n  }\n}; // Effects Values\n\nvar ElementsEffectStyle = {\n  \"normal-v1\": {\n    \"innerShadowBarValue\": \"inset 0px 1px 0px\",\n    \"innerShadowBarItemValue\": \"inset 0px 1px 2px\",\n    \"innerShadowSubBarItemValue\": \"inset 0px 1px 1px\",\n    \"activeBarItemOpacity\": \"1\",\n    \"inactiveBarItemOpacity\": \"0.8\",\n    \"activeBarSubItemOpacity\": \"1\",\n    \"inactiveBarSubItemOpacity\": \"0.8\"\n  }\n}; // Size Norms\n\nvar ElementsSizeStyle = {\n  \"normal-v1\": {\n    \"verticalSpacingInnerBarSize\": \"8px\",\n    \"horizontalSpacingInnerBarSize\": \"8px\",\n    \"verticalSpacingInnerBarItemSize\": \"4px\",\n    \"horizontalSpacingInnerBarItemSize\": \"12px\",\n    \"verticalSpacingInnerSubBarItemSize\": \"2px\",\n    \"horizontalSpacingInnerSubBarItemSize\": \"4px\",\n    \"borderBarSize\": \"1px\",\n    \"bottomBorderBarItem\": \"4px solid\",\n    \"rightBorderBarItem\": \"2px solid\",\n    \"activeTextBarSize\": \"20px\",\n    \"inactiveTextBarSize\": \"18px\",\n    \"activeTextSubBarSize\": \"14px\",\n    \"inactiveTextSubBarSize\": \"14px\"\n  }\n};\n\nvar constructGlobalStyle = function constructGlobalStyle(barType, themeType, colorPalette, elementsSize, elementsEffect) {\n  var changedGlobalStyle = {};\n  changedGlobalStyle[\"bar\"] = {\n    \"borderStyle\": \"solid\",\n    \"borderWidth\": elementsSize.borderBarSize,\n    \"backgroundColor\": colorPalette.barColor,\n    \"borderColor\": colorPalette.borderBarColor,\n    \"boxShadow\": elementsEffect.innerShadowBarValue + \" \" + colorPalette.innerShadowBarColor\n  };\n  var paddingBarItem = \"0px 0px\";\n\n  if (barType === \"horizontal\") {\n    paddingBarItem = elementsSize.verticalSpacingInnerBarSize + \" \" + elementsSize.horizontalSpacingInnerBarItemSize;\n  } else if (barType === \"vertical\") {\n    paddingBarItem = elementsSize.verticalSpacingInnerBarItemSize + \" \" + elementsSize.horizontalSpacingInnerBarSize;\n  }\n\n  var commonBarItemStyle = {\n    \"cursor\": \"pointer\",\n    \"padding\": paddingBarItem,\n    \"display\": \"flex\",\n    \"alignItems\": \"center\",\n    \"justifyContent\": \"center\",\n    \"textAlign\": \"center\"\n  };\n  changedGlobalStyle[\"barItem\"] = {\n    \"active\": _objectSpread({}, commonBarItemStyle, {\n      \"fontSize\": elementsSize.activeTextBarSize,\n      \"opacity\": elementsEffect.activeBarSubItemOpacity\n    }),\n    \"inactive\": _objectSpread({}, commonBarItemStyle, {\n      \"fontSize\": elementsSize.inactiveTextBarSize,\n      \"opacity\": elementsEffect.inactiveBarSubItemOpacity\n    })\n  }; // Must Refine this to the vertical bar\n\n  var paddingSubBarItem = elementsSize.horizontalSpacingInnerSubBarItemSize;\n  var commonSubBarItemStyle = {\n    \"cursor\": \"pointer\",\n    \"padding\": paddingSubBarItem,\n    \"backgroundColor\": colorPalette.subBarColor,\n    \"color\": colorPalette.inactiveSubBarTextColor,\n    \"boxShadow\": elementsEffect.innerShadowSubBarItemValue + \" \" + colorPalette.innerShadowSubBarItemColor,\n    \"fontSize\": elementsSize.activeTextSubBarSize\n  };\n  changedGlobalStyle[\"subBarItem\"] = {\n    \"active\": _objectSpread({}, commonSubBarItemStyle, {\n      \"opacity\": elementsEffect.activeBarSubItemOpacity\n    }),\n    \"inactive\": _objectSpread({}, commonSubBarItemStyle, {\n      \"opacity\": elementsEffect.inactiveBarSubItemOpacity\n    })\n  };\n\n  if (themeType !== undefined && themeType.includes(\"boxes\")) {\n    changedGlobalStyle.barItem.active[\"boxShadow\"] = elementsEffect.innerShadowBarItemValue + \" \" + colorPalette.innerShadowBarItemColor;\n  }\n\n  if (themeType !== undefined && themeType.includes(\"underlined\") && themeType.includes(\"boxes\")) {\n    if (barType === \"horizontal\") {\n      changedGlobalStyle.barItem.active[\"borderBottom\"] = elementsSize.bottomBorderBarItem + \" \" + colorPalette.underlineBoxColor;\n    } else if (barType === \"vertical\") {\n      changedGlobalStyle.barItem.active[\"borderRight\"] = elementsSize.rightBorderBarItem + \" \" + colorPalette.underlineBoxColor;\n    }\n  } else if (themeType !== undefined && themeType.includes(\"underlined\")) {\n    changedGlobalStyle.barItem.active[\"textDecorationLine\"] = \"underline\";\n  } // Does not know yet why it don't work\n  // changedGlobalStyle.barItem.active[\"&:hover\"] = changedGlobalStyle.barItem.active;\n\n\n  return changedGlobalStyle;\n};\n/* \r\n    The Structure of the themeObject is : {\r\n        type , colorPalette , size, effect\r\n    }\r\n\r\n    The Structure of the Result is : {\r\n        bar , barItem : {active, inactive}, subBarItem : {active, inactive}\r\n    }\r\n*/\n// Must know Also the type of the bar ( vertical or horizontal )\n\n\nvar themeConstruction = function themeConstruction(themeObject, barType) {\n  // Check Warning and Errors of themeObject\n  return constructGlobalStyle(barType, themeObject.type ? themeObject.type : \"simple\", themeObject.colorPalette ? ColorPalettesStyles[themeObject.colorPalette] : ColorPalettesStyles[\"standard-v1\"], themeObject.size ? ElementsSizeStyle[themeObject.size] : ElementsSizeStyle[\"normal-v1\"], themeObject.effect ? ElementsEffectStyle[themeObject.effect] : ElementsEffectStyle[\"normal-v1\"]);\n};\n\n//# sourceURL=webpack:///./index.js?");
 
-// Global Variable that contain the index of the active Tab
-export var indexActiveTab = 0;
-export var arrayIsActiveItems = [];
+/***/ }),
 
-const paperStyle = (itemRef, subitemStyle, isChildrenExist) => {
-  if(isChildrenExist && itemRef && itemRef.current && itemRef.current.offsetHeight && itemRef.current.offsetWidth && itemRef.current.offsetTop && itemRef.current.offsetLeft){
-    return {
-      "position": "absolute",
-      "top": (itemRef.current.offsetTop + itemRef.current.offsetHeight),
-      "left": itemRef.current.offsetLeft,
-      "minWidth": itemRef.current.offsetWidth,
-      "display": "grid",
-    };
-  }
-  return {"display": "none"};
-};
+/***/ "./node_modules/object-assign/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/object-assign/index.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-export class SubBarItem extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      "isHovered": false
-    };
-  };
+"use strict";
+eval("/*\r\nobject-assign\r\n(c) Sindre Sorhus\r\n@license MIT\r\n*/\r\n\r\n\r\n/* eslint-disable no-unused-vars */\r\nvar getOwnPropertySymbols = Object.getOwnPropertySymbols;\r\nvar hasOwnProperty = Object.prototype.hasOwnProperty;\r\nvar propIsEnumerable = Object.prototype.propertyIsEnumerable;\r\n\r\nfunction toObject(val) {\r\n\tif (val === null || val === undefined) {\r\n\t\tthrow new TypeError('Object.assign cannot be called with null or undefined');\r\n\t}\r\n\r\n\treturn Object(val);\r\n}\r\n\r\nfunction shouldUseNative() {\r\n\ttry {\r\n\t\tif (!Object.assign) {\r\n\t\t\treturn false;\r\n\t\t}\r\n\r\n\t\t// Detect buggy property enumeration order in older V8 versions.\r\n\r\n\t\t// https://bugs.chromium.org/p/v8/issues/detail?id=4118\r\n\t\tvar test1 = new String('abc');  // eslint-disable-line no-new-wrappers\r\n\t\ttest1[5] = 'de';\r\n\t\tif (Object.getOwnPropertyNames(test1)[0] === '5') {\r\n\t\t\treturn false;\r\n\t\t}\r\n\r\n\t\t// https://bugs.chromium.org/p/v8/issues/detail?id=3056\r\n\t\tvar test2 = {};\r\n\t\tfor (var i = 0; i < 10; i++) {\r\n\t\t\ttest2['_' + String.fromCharCode(i)] = i;\r\n\t\t}\r\n\t\tvar order2 = Object.getOwnPropertyNames(test2).map(function (n) {\r\n\t\t\treturn test2[n];\r\n\t\t});\r\n\t\tif (order2.join('') !== '0123456789') {\r\n\t\t\treturn false;\r\n\t\t}\r\n\r\n\t\t// https://bugs.chromium.org/p/v8/issues/detail?id=3056\r\n\t\tvar test3 = {};\r\n\t\t'abcdefghijklmnopqrst'.split('').forEach(function (letter) {\r\n\t\t\ttest3[letter] = letter;\r\n\t\t});\r\n\t\tif (Object.keys(Object.assign({}, test3)).join('') !==\r\n\t\t\t\t'abcdefghijklmnopqrst') {\r\n\t\t\treturn false;\r\n\t\t}\r\n\r\n\t\treturn true;\r\n\t} catch (err) {\r\n\t\t// We don't expect any of the above to throw, but better to be safe.\r\n\t\treturn false;\r\n\t}\r\n}\r\n\r\nmodule.exports = shouldUseNative() ? Object.assign : function (target, source) {\r\n\tvar from;\r\n\tvar to = toObject(target);\r\n\tvar symbols;\r\n\r\n\tfor (var s = 1; s < arguments.length; s++) {\r\n\t\tfrom = Object(arguments[s]);\r\n\r\n\t\tfor (var key in from) {\r\n\t\t\tif (hasOwnProperty.call(from, key)) {\r\n\t\t\t\tto[key] = from[key];\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tif (getOwnPropertySymbols) {\r\n\t\t\tsymbols = getOwnPropertySymbols(from);\r\n\t\t\tfor (var i = 0; i < symbols.length; i++) {\r\n\t\t\t\tif (propIsEnumerable.call(from, symbols[i])) {\r\n\t\t\t\t\tto[symbols[i]] = from[symbols[i]];\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\treturn to;\r\n};\r\n\n\n//# sourceURL=webpack:///./node_modules/object-assign/index.js?");
 
-  shouldComponentUpdate(nextProps, nextState) {
-    if (
-      this.state.isHovered === nextState.isHovered
-    ) {
-      return false;
-    }
-    return true;
-  };
+/***/ }),
 
-  onClickFunc = () => {
-    const {onClick, updateBarItem} = this.props;
-    updateBarItem(true);
-    if(onClick) {
-      onClick();
-    }
-  };
+/***/ "./node_modules/prop-types/checkPropTypes.js":
+/*!***************************************************!*\
+  !*** ./node_modules/prop-types/checkPropTypes.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-  render(){
-    const {index, title, hideSubs, style} = this.props;
-    return(
-      <div
-      id={"sub-item-" + index}
-      onMouseOut={(event) => {
-        this.setState({"isHovered": false});
-        const predicate = (
-          (event.pageY >=
-            event.target.parentNode.offsetTop +
-            event.target.parentNode.offsetHeight
-          )
-          || (event.pageY  <= event.target.parentNode.offsetTop)
-          || (event.pageX  <= event.target.parentNode.offsetLeft)
-          || (event.pageX  >= event.target.parentNode.offsetLeft + event.target.parentNode.offsetWidth)
-        );
-        if(predicate){
-          hideSubs();
-        }
-      }}
-      onMouseOver={() => this.setState({"isHovered": true})}
-      onClick={this.onClickFunc}
-      style={this.state.isHovered ? style.active : style.inactive}
-    >
-      {title ? title : "Empty Title"}
-    </div>
-    );
-  };
-};
+"use strict";
+eval("/**\r\n * Copyright (c) 2013-present, Facebook, Inc.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE file in the root directory of this source tree.\r\n */\r\n\r\n\r\n\r\nvar printWarning = function() {};\r\n\r\nif (true) {\r\n  var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ \"./node_modules/prop-types/lib/ReactPropTypesSecret.js\");\r\n  var loggedTypeFailures = {};\r\n  var has = Function.call.bind(Object.prototype.hasOwnProperty);\r\n\r\n  printWarning = function(text) {\r\n    var message = 'Warning: ' + text;\r\n    if (typeof console !== 'undefined') {\r\n      console.error(message);\r\n    }\r\n    try {\r\n      // --- Welcome to debugging React ---\r\n      // This error was thrown as a convenience so that you can use this stack\r\n      // to find the callsite that caused this warning to fire.\r\n      throw new Error(message);\r\n    } catch (x) {}\r\n  };\r\n}\r\n\r\n/**\r\n * Assert that the values match with the type specs.\r\n * Error messages are memorized and will only be shown once.\r\n *\r\n * @param {object} typeSpecs Map of name to a ReactPropType\r\n * @param {object} values Runtime values that need to be type-checked\r\n * @param {string} location e.g. \"prop\", \"context\", \"child context\"\r\n * @param {string} componentName Name of the component for error messages.\r\n * @param {?Function} getStack Returns the component stack.\r\n * @private\r\n */\r\nfunction checkPropTypes(typeSpecs, values, location, componentName, getStack) {\r\n  if (true) {\r\n    for (var typeSpecName in typeSpecs) {\r\n      if (has(typeSpecs, typeSpecName)) {\r\n        var error;\r\n        // Prop type validation may throw. In case they do, we don't want to\r\n        // fail the render phase where it didn't fail before. So we log it.\r\n        // After these have been cleaned up, we'll let them throw.\r\n        try {\r\n          // This is intentionally an invariant that gets caught. It's the same\r\n          // behavior as without this statement except with a better message.\r\n          if (typeof typeSpecs[typeSpecName] !== 'function') {\r\n            var err = Error(\r\n              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +\r\n              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.'\r\n            );\r\n            err.name = 'Invariant Violation';\r\n            throw err;\r\n          }\r\n          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);\r\n        } catch (ex) {\r\n          error = ex;\r\n        }\r\n        if (error && !(error instanceof Error)) {\r\n          printWarning(\r\n            (componentName || 'React class') + ': type specification of ' +\r\n            location + ' `' + typeSpecName + '` is invalid; the type checker ' +\r\n            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +\r\n            'You may have forgotten to pass an argument to the type checker ' +\r\n            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +\r\n            'shape all require an argument).'\r\n          );\r\n        }\r\n        if (error instanceof Error && !(error.message in loggedTypeFailures)) {\r\n          // Only monitor this failure once because there tends to be a lot of the\r\n          // same error.\r\n          loggedTypeFailures[error.message] = true;\r\n\r\n          var stack = getStack ? getStack() : '';\r\n\r\n          printWarning(\r\n            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')\r\n          );\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n/**\r\n * Resets warning cache when testing.\r\n *\r\n * @private\r\n */\r\ncheckPropTypes.resetWarningCache = function() {\r\n  if (true) {\r\n    loggedTypeFailures = {};\r\n  }\r\n}\r\n\r\nmodule.exports = checkPropTypes;\r\n\n\n//# sourceURL=webpack:///./node_modules/prop-types/checkPropTypes.js?");
 
-export class BarItem extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      'isHovered': false,
-      'showSubs': false,
-      'keyState': KeyBarItem
-    };
-    this.myRef = React.createRef();
-  }
+/***/ }),
 
-  setHover = (isHovered) => (event) => {
-    const predicate = (
-      (event.pageY >= event.target.offsetTop)
-      && (event.pageX > event.target.offsetLeft)
-      && (event.pageX < event.target.offsetLeft + event.target.offsetWidth)
-    );
-    this.setState({'showSubs': (predicate || isHovered)});
-    this.setState({isHovered});
-  };
+/***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-  shouldComponentUpdate(nextProps, nextState) {
-    if(
-      this.props.title !== nextProps.title
-    ){
-      return true;
-    }
-    if (
-      this.props.isTabActive !== undefined &&
-      nextProps.isTabActive !== undefined &&
-      this.props.isTabActive === nextProps.isTabActive &&
-      this.state.isHovered === nextState.isHovered &&
-      this.state.showSubs === nextState.showSubs
-    ) {
-      return false;
-    }
-    return true;
-  };
+"use strict";
+eval("/**\r\n * Copyright (c) 2013-present, Facebook, Inc.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE file in the root directory of this source tree.\r\n */\r\n\r\n\r\n\r\nvar ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';\r\n\r\nmodule.exports = ReactPropTypesSecret;\r\n\n\n//# sourceURL=webpack:///./node_modules/prop-types/lib/ReactPropTypesSecret.js?");
 
-  switchTab = onClickFunc => () => {
-    if (this.props.isTabActive === false && (
-        this.props.isDisabled === undefined ||
-        this.props.isDisabled === false
-        )) {
-      if (onClickFunc && typeof onClickFunc === "function") {
-        onClickFunc();
-      }
-      this.props.updateBarItem(true);
-    }
-  };
+/***/ }),
 
-  hideSubs = () => this.setState({'showSubs': false});
+/***/ "./node_modules/react/cjs/react.development.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/react/cjs/react.development.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-  render() {
-    const { isTabActive, style, updateBarItem, onClick, title, isDisabled, styles } = this.props;
-    const {isHovered, showSubs} = this.state;
-    const AllElements = (
-      <React.Fragment>
-        {Array.isArray(this.props.children) ?
-          this.props.children.map((element, index) => (
-            <React.Fragment key={index}>
-              {React.cloneElement(element, {
-                index,
-                hideSubs: this.hideSubs,
-                style: styles.subItem,
-                updateBarItem: this.props.updateBarItem
-              })}
-            </React.Fragment>
-        ))
-        : <React.Fragment>
-            {this.props.children && React.cloneElement(this.props.children, {
-              "index": 0,
-              hideSubs: this.hideSubs,
-              style: styles.subItem,
-              updateBarItem: this.props.updateBarItem
-            })}
-           </React.Fragment>
-        }
-      </React.Fragment>
-    );
-    const addedStyle = style ? style : {};
-    return (
-      <React.Fragment>
-      <div
-        ref={this.myRef}
-        onMouseOver={this.setHover(true)}
-        onMouseOut={this.setHover(false)}
-        onClick={this.switchTab(onClick)}
-        style={(isTabActive || isHovered) ? {
-          ...styles.item.active,
-          ...addedStyle
-        } : {
-          ...styles.item.inactive,
-          ...addedStyle
-        }}
-      >
-        <div>{title ? title : "Empty Title"}</div>
-      </div>
-      {
-        (showSubs) && <div 
-            onMouseOut={(event) => {
-              if(
-                event &&
-                event.relatedTarget &&
-                event.relatedTarget.id &&
-                !event.relatedTarget.id.includes("sub-item")
-              ){
-                this.hideSubs();
-              }
-            }
-          }
-            style={paperStyle(this.myRef, styles.subItem, (this.props.children !== undefined))}
-        >
-        {AllElements}
-      </div>
-      }
-      </React.Fragment>
-    );
-  }
-}
+"use strict";
+eval("/** @license React v16.12.0\r\n * react.development.js\r\n *\r\n * Copyright (c) Facebook, Inc. and its affiliates.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE file in the root directory of this source tree.\r\n */\r\n\r\n\r\n\r\n\r\n\r\nif (true) {\r\n  (function() {\r\n'use strict';\r\n\r\nvar _assign = __webpack_require__(/*! object-assign */ \"./node_modules/object-assign/index.js\");\r\nvar checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ \"./node_modules/prop-types/checkPropTypes.js\");\r\n\r\n// TODO: this is special because it gets imported during build.\r\n\r\nvar ReactVersion = '16.12.0';\r\n\r\n// The Symbol used to tag the ReactElement-like types. If there is no native Symbol\r\n// nor polyfill, then a plain number is used for performance.\r\nvar hasSymbol = typeof Symbol === 'function' && Symbol.for;\r\nvar REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;\r\nvar REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;\r\nvar REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;\r\nvar REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;\r\nvar REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;\r\nvar REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;\r\nvar REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary\r\n// (unstable) APIs that have been removed. Can we remove the symbols?\r\n\r\n\r\nvar REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;\r\nvar REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;\r\nvar REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;\r\nvar REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;\r\nvar REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;\r\nvar REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;\r\nvar REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;\r\nvar REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;\r\nvar REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;\r\nvar MAYBE_ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;\r\nvar FAUX_ITERATOR_SYMBOL = '@@iterator';\r\nfunction getIteratorFn(maybeIterable) {\r\n  if (maybeIterable === null || typeof maybeIterable !== 'object') {\r\n    return null;\r\n  }\r\n\r\n  var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];\r\n\r\n  if (typeof maybeIterator === 'function') {\r\n    return maybeIterator;\r\n  }\r\n\r\n  return null;\r\n}\r\n\r\n// Do not require this module directly! Use normal `invariant` calls with\r\n// template literal strings. The messages will be replaced with error codes\r\n// during build.\r\n\r\n/**\r\n * Use invariant() to assert state which your program assumes to be true.\r\n *\r\n * Provide sprintf-style format (only %s is supported) and arguments\r\n * to provide information about what broke and what you were\r\n * expecting.\r\n *\r\n * The invariant message will be stripped in production, but the invariant\r\n * will remain to ensure logic does not differ in production.\r\n */\r\n\r\n/**\r\n * Forked from fbjs/warning:\r\n * https://github.com/facebook/fbjs/blob/e66ba20ad5be433eb54423f2b097d829324d9de6/packages/fbjs/src/__forks__/warning.js\r\n *\r\n * Only change is we use console.warn instead of console.error,\r\n * and do nothing when 'console' is not supported.\r\n * This really simplifies the code.\r\n * ---\r\n * Similar to invariant but only logs a warning if the condition is not met.\r\n * This can be used to log issues in development environments in critical\r\n * paths. Removing the logging code for production environments will keep the\r\n * same logic and follow the same code paths.\r\n */\r\nvar lowPriorityWarningWithoutStack = function () {};\r\n\r\n{\r\n  var printWarning = function (format) {\r\n    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {\r\n      args[_key - 1] = arguments[_key];\r\n    }\r\n\r\n    var argIndex = 0;\r\n    var message = 'Warning: ' + format.replace(/%s/g, function () {\r\n      return args[argIndex++];\r\n    });\r\n\r\n    if (typeof console !== 'undefined') {\r\n      console.warn(message);\r\n    }\r\n\r\n    try {\r\n      // --- Welcome to debugging React ---\r\n      // This error was thrown as a convenience so that you can use this stack\r\n      // to find the callsite that caused this warning to fire.\r\n      throw new Error(message);\r\n    } catch (x) {}\r\n  };\r\n\r\n  lowPriorityWarningWithoutStack = function (condition, format) {\r\n    if (format === undefined) {\r\n      throw new Error('`lowPriorityWarningWithoutStack(condition, format, ...args)` requires a warning ' + 'message argument');\r\n    }\r\n\r\n    if (!condition) {\r\n      for (var _len2 = arguments.length, args = new Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {\r\n        args[_key2 - 2] = arguments[_key2];\r\n      }\r\n\r\n      printWarning.apply(void 0, [format].concat(args));\r\n    }\r\n  };\r\n}\r\n\r\nvar lowPriorityWarningWithoutStack$1 = lowPriorityWarningWithoutStack;\r\n\r\n/**\r\n * Similar to invariant but only logs a warning if the condition is not met.\r\n * This can be used to log issues in development environments in critical\r\n * paths. Removing the logging code for production environments will keep the\r\n * same logic and follow the same code paths.\r\n */\r\nvar warningWithoutStack = function () {};\r\n\r\n{\r\n  warningWithoutStack = function (condition, format) {\r\n    for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {\r\n      args[_key - 2] = arguments[_key];\r\n    }\r\n\r\n    if (format === undefined) {\r\n      throw new Error('`warningWithoutStack(condition, format, ...args)` requires a warning ' + 'message argument');\r\n    }\r\n\r\n    if (args.length > 8) {\r\n      // Check before the condition to catch violations early.\r\n      throw new Error('warningWithoutStack() currently supports at most 8 arguments.');\r\n    }\r\n\r\n    if (condition) {\r\n      return;\r\n    }\r\n\r\n    if (typeof console !== 'undefined') {\r\n      var argsWithFormat = args.map(function (item) {\r\n        return '' + item;\r\n      });\r\n      argsWithFormat.unshift('Warning: ' + format); // We intentionally don't use spread (or .apply) directly because it\r\n      // breaks IE9: https://github.com/facebook/react/issues/13610\r\n\r\n      Function.prototype.apply.call(console.error, console, argsWithFormat);\r\n    }\r\n\r\n    try {\r\n      // --- Welcome to debugging React ---\r\n      // This error was thrown as a convenience so that you can use this stack\r\n      // to find the callsite that caused this warning to fire.\r\n      var argIndex = 0;\r\n      var message = 'Warning: ' + format.replace(/%s/g, function () {\r\n        return args[argIndex++];\r\n      });\r\n      throw new Error(message);\r\n    } catch (x) {}\r\n  };\r\n}\r\n\r\nvar warningWithoutStack$1 = warningWithoutStack;\r\n\r\nvar didWarnStateUpdateForUnmountedComponent = {};\r\n\r\nfunction warnNoop(publicInstance, callerName) {\r\n  {\r\n    var _constructor = publicInstance.constructor;\r\n    var componentName = _constructor && (_constructor.displayName || _constructor.name) || 'ReactClass';\r\n    var warningKey = componentName + \".\" + callerName;\r\n\r\n    if (didWarnStateUpdateForUnmountedComponent[warningKey]) {\r\n      return;\r\n    }\r\n\r\n    warningWithoutStack$1(false, \"Can't call %s on a component that is not yet mounted. \" + 'This is a no-op, but it might indicate a bug in your application. ' + 'Instead, assign to `this.state` directly or define a `state = {};` ' + 'class property with the desired state in the %s component.', callerName, componentName);\r\n    didWarnStateUpdateForUnmountedComponent[warningKey] = true;\r\n  }\r\n}\r\n/**\r\n * This is the abstract API for an update queue.\r\n */\r\n\r\n\r\nvar ReactNoopUpdateQueue = {\r\n  /**\r\n   * Checks whether or not this composite component is mounted.\r\n   * @param {ReactClass} publicInstance The instance we want to test.\r\n   * @return {boolean} True if mounted, false otherwise.\r\n   * @protected\r\n   * @final\r\n   */\r\n  isMounted: function (publicInstance) {\r\n    return false;\r\n  },\r\n\r\n  /**\r\n   * Forces an update. This should only be invoked when it is known with\r\n   * certainty that we are **not** in a DOM transaction.\r\n   *\r\n   * You may want to call this when you know that some deeper aspect of the\r\n   * component's state has changed but `setState` was not called.\r\n   *\r\n   * This will not invoke `shouldComponentUpdate`, but it will invoke\r\n   * `componentWillUpdate` and `componentDidUpdate`.\r\n   *\r\n   * @param {ReactClass} publicInstance The instance that should rerender.\r\n   * @param {?function} callback Called after component is updated.\r\n   * @param {?string} callerName name of the calling function in the public API.\r\n   * @internal\r\n   */\r\n  enqueueForceUpdate: function (publicInstance, callback, callerName) {\r\n    warnNoop(publicInstance, 'forceUpdate');\r\n  },\r\n\r\n  /**\r\n   * Replaces all of the state. Always use this or `setState` to mutate state.\r\n   * You should treat `this.state` as immutable.\r\n   *\r\n   * There is no guarantee that `this.state` will be immediately updated, so\r\n   * accessing `this.state` after calling this method may return the old value.\r\n   *\r\n   * @param {ReactClass} publicInstance The instance that should rerender.\r\n   * @param {object} completeState Next state.\r\n   * @param {?function} callback Called after component is updated.\r\n   * @param {?string} callerName name of the calling function in the public API.\r\n   * @internal\r\n   */\r\n  enqueueReplaceState: function (publicInstance, completeState, callback, callerName) {\r\n    warnNoop(publicInstance, 'replaceState');\r\n  },\r\n\r\n  /**\r\n   * Sets a subset of the state. This only exists because _pendingState is\r\n   * internal. This provides a merging strategy that is not available to deep\r\n   * properties which is confusing. TODO: Expose pendingState or don't use it\r\n   * during the merge.\r\n   *\r\n   * @param {ReactClass} publicInstance The instance that should rerender.\r\n   * @param {object} partialState Next partial state to be merged with state.\r\n   * @param {?function} callback Called after component is updated.\r\n   * @param {?string} Name of the calling function in the public API.\r\n   * @internal\r\n   */\r\n  enqueueSetState: function (publicInstance, partialState, callback, callerName) {\r\n    warnNoop(publicInstance, 'setState');\r\n  }\r\n};\r\n\r\nvar emptyObject = {};\r\n\r\n{\r\n  Object.freeze(emptyObject);\r\n}\r\n/**\r\n * Base class helpers for the updating state of a component.\r\n */\r\n\r\n\r\nfunction Component(props, context, updater) {\r\n  this.props = props;\r\n  this.context = context; // If a component has string refs, we will assign a different object later.\r\n\r\n  this.refs = emptyObject; // We initialize the default updater but the real one gets injected by the\r\n  // renderer.\r\n\r\n  this.updater = updater || ReactNoopUpdateQueue;\r\n}\r\n\r\nComponent.prototype.isReactComponent = {};\r\n/**\r\n * Sets a subset of the state. Always use this to mutate\r\n * state. You should treat `this.state` as immutable.\r\n *\r\n * There is no guarantee that `this.state` will be immediately updated, so\r\n * accessing `this.state` after calling this method may return the old value.\r\n *\r\n * There is no guarantee that calls to `setState` will run synchronously,\r\n * as they may eventually be batched together.  You can provide an optional\r\n * callback that will be executed when the call to setState is actually\r\n * completed.\r\n *\r\n * When a function is provided to setState, it will be called at some point in\r\n * the future (not synchronously). It will be called with the up to date\r\n * component arguments (state, props, context). These values can be different\r\n * from this.* because your function may be called after receiveProps but before\r\n * shouldComponentUpdate, and this new state, props, and context will not yet be\r\n * assigned to this.\r\n *\r\n * @param {object|function} partialState Next partial state or function to\r\n *        produce next partial state to be merged with current state.\r\n * @param {?function} callback Called after state is updated.\r\n * @final\r\n * @protected\r\n */\r\n\r\nComponent.prototype.setState = function (partialState, callback) {\r\n  if (!(typeof partialState === 'object' || typeof partialState === 'function' || partialState == null)) {\r\n    {\r\n      throw Error(\"setState(...): takes an object of state variables to update or a function which returns an object of state variables.\");\r\n    }\r\n  }\r\n\r\n  this.updater.enqueueSetState(this, partialState, callback, 'setState');\r\n};\r\n/**\r\n * Forces an update. This should only be invoked when it is known with\r\n * certainty that we are **not** in a DOM transaction.\r\n *\r\n * You may want to call this when you know that some deeper aspect of the\r\n * component's state has changed but `setState` was not called.\r\n *\r\n * This will not invoke `shouldComponentUpdate`, but it will invoke\r\n * `componentWillUpdate` and `componentDidUpdate`.\r\n *\r\n * @param {?function} callback Called after update is complete.\r\n * @final\r\n * @protected\r\n */\r\n\r\n\r\nComponent.prototype.forceUpdate = function (callback) {\r\n  this.updater.enqueueForceUpdate(this, callback, 'forceUpdate');\r\n};\r\n/**\r\n * Deprecated APIs. These APIs used to exist on classic React classes but since\r\n * we would like to deprecate them, we're not going to move them over to this\r\n * modern base class. Instead, we define a getter that warns if it's accessed.\r\n */\r\n\r\n\r\n{\r\n  var deprecatedAPIs = {\r\n    isMounted: ['isMounted', 'Instead, make sure to clean up subscriptions and pending requests in ' + 'componentWillUnmount to prevent memory leaks.'],\r\n    replaceState: ['replaceState', 'Refactor your code to use setState instead (see ' + 'https://github.com/facebook/react/issues/3236).']\r\n  };\r\n\r\n  var defineDeprecationWarning = function (methodName, info) {\r\n    Object.defineProperty(Component.prototype, methodName, {\r\n      get: function () {\r\n        lowPriorityWarningWithoutStack$1(false, '%s(...) is deprecated in plain JavaScript React classes. %s', info[0], info[1]);\r\n        return undefined;\r\n      }\r\n    });\r\n  };\r\n\r\n  for (var fnName in deprecatedAPIs) {\r\n    if (deprecatedAPIs.hasOwnProperty(fnName)) {\r\n      defineDeprecationWarning(fnName, deprecatedAPIs[fnName]);\r\n    }\r\n  }\r\n}\r\n\r\nfunction ComponentDummy() {}\r\n\r\nComponentDummy.prototype = Component.prototype;\r\n/**\r\n * Convenience component with default shallow equality check for sCU.\r\n */\r\n\r\nfunction PureComponent(props, context, updater) {\r\n  this.props = props;\r\n  this.context = context; // If a component has string refs, we will assign a different object later.\r\n\r\n  this.refs = emptyObject;\r\n  this.updater = updater || ReactNoopUpdateQueue;\r\n}\r\n\r\nvar pureComponentPrototype = PureComponent.prototype = new ComponentDummy();\r\npureComponentPrototype.constructor = PureComponent; // Avoid an extra prototype jump for these methods.\r\n\r\n_assign(pureComponentPrototype, Component.prototype);\r\n\r\npureComponentPrototype.isPureReactComponent = true;\r\n\r\n// an immutable object with a single mutable value\r\nfunction createRef() {\r\n  var refObject = {\r\n    current: null\r\n  };\r\n\r\n  {\r\n    Object.seal(refObject);\r\n  }\r\n\r\n  return refObject;\r\n}\r\n\r\n/**\r\n * Keeps track of the current dispatcher.\r\n */\r\nvar ReactCurrentDispatcher = {\r\n  /**\r\n   * @internal\r\n   * @type {ReactComponent}\r\n   */\r\n  current: null\r\n};\r\n\r\n/**\r\n * Keeps track of the current batch's configuration such as how long an update\r\n * should suspend for if it needs to.\r\n */\r\nvar ReactCurrentBatchConfig = {\r\n  suspense: null\r\n};\r\n\r\n/**\r\n * Keeps track of the current owner.\r\n *\r\n * The current owner is the component who should own any components that are\r\n * currently being constructed.\r\n */\r\nvar ReactCurrentOwner = {\r\n  /**\r\n   * @internal\r\n   * @type {ReactComponent}\r\n   */\r\n  current: null\r\n};\r\n\r\nvar BEFORE_SLASH_RE = /^(.*)[\\\\\\/]/;\r\nvar describeComponentFrame = function (name, source, ownerName) {\r\n  var sourceInfo = '';\r\n\r\n  if (source) {\r\n    var path = source.fileName;\r\n    var fileName = path.replace(BEFORE_SLASH_RE, '');\r\n\r\n    {\r\n      // In DEV, include code for a common special case:\r\n      // prefer \"folder/index.js\" instead of just \"index.js\".\r\n      if (/^index\\./.test(fileName)) {\r\n        var match = path.match(BEFORE_SLASH_RE);\r\n\r\n        if (match) {\r\n          var pathBeforeSlash = match[1];\r\n\r\n          if (pathBeforeSlash) {\r\n            var folderName = pathBeforeSlash.replace(BEFORE_SLASH_RE, '');\r\n            fileName = folderName + '/' + fileName;\r\n          }\r\n        }\r\n      }\r\n    }\r\n\r\n    sourceInfo = ' (at ' + fileName + ':' + source.lineNumber + ')';\r\n  } else if (ownerName) {\r\n    sourceInfo = ' (created by ' + ownerName + ')';\r\n  }\r\n\r\n  return '\\n    in ' + (name || 'Unknown') + sourceInfo;\r\n};\r\n\r\nvar Resolved = 1;\r\n\r\nfunction refineResolvedLazyComponent(lazyComponent) {\r\n  return lazyComponent._status === Resolved ? lazyComponent._result : null;\r\n}\r\n\r\nfunction getWrappedName(outerType, innerType, wrapperName) {\r\n  var functionName = innerType.displayName || innerType.name || '';\r\n  return outerType.displayName || (functionName !== '' ? wrapperName + \"(\" + functionName + \")\" : wrapperName);\r\n}\r\n\r\nfunction getComponentName(type) {\r\n  if (type == null) {\r\n    // Host root, text node or just invalid type.\r\n    return null;\r\n  }\r\n\r\n  {\r\n    if (typeof type.tag === 'number') {\r\n      warningWithoutStack$1(false, 'Received an unexpected object in getComponentName(). ' + 'This is likely a bug in React. Please file an issue.');\r\n    }\r\n  }\r\n\r\n  if (typeof type === 'function') {\r\n    return type.displayName || type.name || null;\r\n  }\r\n\r\n  if (typeof type === 'string') {\r\n    return type;\r\n  }\r\n\r\n  switch (type) {\r\n    case REACT_FRAGMENT_TYPE:\r\n      return 'Fragment';\r\n\r\n    case REACT_PORTAL_TYPE:\r\n      return 'Portal';\r\n\r\n    case REACT_PROFILER_TYPE:\r\n      return \"Profiler\";\r\n\r\n    case REACT_STRICT_MODE_TYPE:\r\n      return 'StrictMode';\r\n\r\n    case REACT_SUSPENSE_TYPE:\r\n      return 'Suspense';\r\n\r\n    case REACT_SUSPENSE_LIST_TYPE:\r\n      return 'SuspenseList';\r\n  }\r\n\r\n  if (typeof type === 'object') {\r\n    switch (type.$$typeof) {\r\n      case REACT_CONTEXT_TYPE:\r\n        return 'Context.Consumer';\r\n\r\n      case REACT_PROVIDER_TYPE:\r\n        return 'Context.Provider';\r\n\r\n      case REACT_FORWARD_REF_TYPE:\r\n        return getWrappedName(type, type.render, 'ForwardRef');\r\n\r\n      case REACT_MEMO_TYPE:\r\n        return getComponentName(type.type);\r\n\r\n      case REACT_LAZY_TYPE:\r\n        {\r\n          var thenable = type;\r\n          var resolvedThenable = refineResolvedLazyComponent(thenable);\r\n\r\n          if (resolvedThenable) {\r\n            return getComponentName(resolvedThenable);\r\n          }\r\n\r\n          break;\r\n        }\r\n    }\r\n  }\r\n\r\n  return null;\r\n}\r\n\r\nvar ReactDebugCurrentFrame = {};\r\nvar currentlyValidatingElement = null;\r\nfunction setCurrentlyValidatingElement(element) {\r\n  {\r\n    currentlyValidatingElement = element;\r\n  }\r\n}\r\n\r\n{\r\n  // Stack implementation injected by the current renderer.\r\n  ReactDebugCurrentFrame.getCurrentStack = null;\r\n\r\n  ReactDebugCurrentFrame.getStackAddendum = function () {\r\n    var stack = ''; // Add an extra top frame while an element is being validated\r\n\r\n    if (currentlyValidatingElement) {\r\n      var name = getComponentName(currentlyValidatingElement.type);\r\n      var owner = currentlyValidatingElement._owner;\r\n      stack += describeComponentFrame(name, currentlyValidatingElement._source, owner && getComponentName(owner.type));\r\n    } // Delegate to the injected renderer-specific implementation\r\n\r\n\r\n    var impl = ReactDebugCurrentFrame.getCurrentStack;\r\n\r\n    if (impl) {\r\n      stack += impl() || '';\r\n    }\r\n\r\n    return stack;\r\n  };\r\n}\r\n\r\n/**\r\n * Used by act() to track whether you're inside an act() scope.\r\n */\r\nvar IsSomeRendererActing = {\r\n  current: false\r\n};\r\n\r\nvar ReactSharedInternals = {\r\n  ReactCurrentDispatcher: ReactCurrentDispatcher,\r\n  ReactCurrentBatchConfig: ReactCurrentBatchConfig,\r\n  ReactCurrentOwner: ReactCurrentOwner,\r\n  IsSomeRendererActing: IsSomeRendererActing,\r\n  // Used by renderers to avoid bundling object-assign twice in UMD bundles:\r\n  assign: _assign\r\n};\r\n\r\n{\r\n  _assign(ReactSharedInternals, {\r\n    // These should not be included in production.\r\n    ReactDebugCurrentFrame: ReactDebugCurrentFrame,\r\n    // Shim for React DOM 16.0.0 which still destructured (but not used) this.\r\n    // TODO: remove in React 17.0.\r\n    ReactComponentTreeHook: {}\r\n  });\r\n}\r\n\r\n/**\r\n * Similar to invariant but only logs a warning if the condition is not met.\r\n * This can be used to log issues in development environments in critical\r\n * paths. Removing the logging code for production environments will keep the\r\n * same logic and follow the same code paths.\r\n */\r\n\r\nvar warning = warningWithoutStack$1;\r\n\r\n{\r\n  warning = function (condition, format) {\r\n    if (condition) {\r\n      return;\r\n    }\r\n\r\n    var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;\r\n    var stack = ReactDebugCurrentFrame.getStackAddendum(); // eslint-disable-next-line react-internal/warning-and-invariant-args\r\n\r\n    for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {\r\n      args[_key - 2] = arguments[_key];\r\n    }\r\n\r\n    warningWithoutStack$1.apply(void 0, [false, format + '%s'].concat(args, [stack]));\r\n  };\r\n}\r\n\r\nvar warning$1 = warning;\r\n\r\nvar hasOwnProperty = Object.prototype.hasOwnProperty;\r\nvar RESERVED_PROPS = {\r\n  key: true,\r\n  ref: true,\r\n  __self: true,\r\n  __source: true\r\n};\r\nvar specialPropKeyWarningShown;\r\nvar specialPropRefWarningShown;\r\n\r\nfunction hasValidRef(config) {\r\n  {\r\n    if (hasOwnProperty.call(config, 'ref')) {\r\n      var getter = Object.getOwnPropertyDescriptor(config, 'ref').get;\r\n\r\n      if (getter && getter.isReactWarning) {\r\n        return false;\r\n      }\r\n    }\r\n  }\r\n\r\n  return config.ref !== undefined;\r\n}\r\n\r\nfunction hasValidKey(config) {\r\n  {\r\n    if (hasOwnProperty.call(config, 'key')) {\r\n      var getter = Object.getOwnPropertyDescriptor(config, 'key').get;\r\n\r\n      if (getter && getter.isReactWarning) {\r\n        return false;\r\n      }\r\n    }\r\n  }\r\n\r\n  return config.key !== undefined;\r\n}\r\n\r\nfunction defineKeyPropWarningGetter(props, displayName) {\r\n  var warnAboutAccessingKey = function () {\r\n    if (!specialPropKeyWarningShown) {\r\n      specialPropKeyWarningShown = true;\r\n      warningWithoutStack$1(false, '%s: `key` is not a prop. Trying to access it will result ' + 'in `undefined` being returned. If you need to access the same ' + 'value within the child component, you should pass it as a different ' + 'prop. (https://fb.me/react-special-props)', displayName);\r\n    }\r\n  };\r\n\r\n  warnAboutAccessingKey.isReactWarning = true;\r\n  Object.defineProperty(props, 'key', {\r\n    get: warnAboutAccessingKey,\r\n    configurable: true\r\n  });\r\n}\r\n\r\nfunction defineRefPropWarningGetter(props, displayName) {\r\n  var warnAboutAccessingRef = function () {\r\n    if (!specialPropRefWarningShown) {\r\n      specialPropRefWarningShown = true;\r\n      warningWithoutStack$1(false, '%s: `ref` is not a prop. Trying to access it will result ' + 'in `undefined` being returned. If you need to access the same ' + 'value within the child component, you should pass it as a different ' + 'prop. (https://fb.me/react-special-props)', displayName);\r\n    }\r\n  };\r\n\r\n  warnAboutAccessingRef.isReactWarning = true;\r\n  Object.defineProperty(props, 'ref', {\r\n    get: warnAboutAccessingRef,\r\n    configurable: true\r\n  });\r\n}\r\n/**\r\n * Factory method to create a new React element. This no longer adheres to\r\n * the class pattern, so do not use new to call it. Also, instanceof check\r\n * will not work. Instead test $$typeof field against Symbol.for('react.element') to check\r\n * if something is a React Element.\r\n *\r\n * @param {*} type\r\n * @param {*} props\r\n * @param {*} key\r\n * @param {string|object} ref\r\n * @param {*} owner\r\n * @param {*} self A *temporary* helper to detect places where `this` is\r\n * different from the `owner` when React.createElement is called, so that we\r\n * can warn. We want to get rid of owner and replace string `ref`s with arrow\r\n * functions, and as long as `this` and owner are the same, there will be no\r\n * change in behavior.\r\n * @param {*} source An annotation object (added by a transpiler or otherwise)\r\n * indicating filename, line number, and/or other information.\r\n * @internal\r\n */\r\n\r\n\r\nvar ReactElement = function (type, key, ref, self, source, owner, props) {\r\n  var element = {\r\n    // This tag allows us to uniquely identify this as a React Element\r\n    $$typeof: REACT_ELEMENT_TYPE,\r\n    // Built-in properties that belong on the element\r\n    type: type,\r\n    key: key,\r\n    ref: ref,\r\n    props: props,\r\n    // Record the component responsible for creating this element.\r\n    _owner: owner\r\n  };\r\n\r\n  {\r\n    // The validation flag is currently mutative. We put it on\r\n    // an external backing store so that we can freeze the whole object.\r\n    // This can be replaced with a WeakMap once they are implemented in\r\n    // commonly used development environments.\r\n    element._store = {}; // To make comparing ReactElements easier for testing purposes, we make\r\n    // the validation flag non-enumerable (where possible, which should\r\n    // include every environment we run tests in), so the test framework\r\n    // ignores it.\r\n\r\n    Object.defineProperty(element._store, 'validated', {\r\n      configurable: false,\r\n      enumerable: false,\r\n      writable: true,\r\n      value: false\r\n    }); // self and source are DEV only properties.\r\n\r\n    Object.defineProperty(element, '_self', {\r\n      configurable: false,\r\n      enumerable: false,\r\n      writable: false,\r\n      value: self\r\n    }); // Two elements created in two different places should be considered\r\n    // equal for testing purposes and therefore we hide it from enumeration.\r\n\r\n    Object.defineProperty(element, '_source', {\r\n      configurable: false,\r\n      enumerable: false,\r\n      writable: false,\r\n      value: source\r\n    });\r\n\r\n    if (Object.freeze) {\r\n      Object.freeze(element.props);\r\n      Object.freeze(element);\r\n    }\r\n  }\r\n\r\n  return element;\r\n};\r\n/**\r\n * https://github.com/reactjs/rfcs/pull/107\r\n * @param {*} type\r\n * @param {object} props\r\n * @param {string} key\r\n */\r\n\r\n\r\n\r\n/**\r\n * https://github.com/reactjs/rfcs/pull/107\r\n * @param {*} type\r\n * @param {object} props\r\n * @param {string} key\r\n */\r\n\r\nfunction jsxDEV(type, config, maybeKey, source, self) {\r\n  var propName; // Reserved names are extracted\r\n\r\n  var props = {};\r\n  var key = null;\r\n  var ref = null; // Currently, key can be spread in as a prop. This causes a potential\r\n  // issue if key is also explicitly declared (ie. <div {...props} key=\"Hi\" />\r\n  // or <div key=\"Hi\" {...props} /> ). We want to deprecate key spread,\r\n  // but as an intermediary step, we will use jsxDEV for everything except\r\n  // <div {...props} key=\"Hi\" />, because we aren't currently able to tell if\r\n  // key is explicitly declared to be undefined or not.\r\n\r\n  if (maybeKey !== undefined) {\r\n    key = '' + maybeKey;\r\n  }\r\n\r\n  if (hasValidKey(config)) {\r\n    key = '' + config.key;\r\n  }\r\n\r\n  if (hasValidRef(config)) {\r\n    ref = config.ref;\r\n  } // Remaining properties are added to a new props object\r\n\r\n\r\n  for (propName in config) {\r\n    if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {\r\n      props[propName] = config[propName];\r\n    }\r\n  } // Resolve default props\r\n\r\n\r\n  if (type && type.defaultProps) {\r\n    var defaultProps = type.defaultProps;\r\n\r\n    for (propName in defaultProps) {\r\n      if (props[propName] === undefined) {\r\n        props[propName] = defaultProps[propName];\r\n      }\r\n    }\r\n  }\r\n\r\n  if (key || ref) {\r\n    var displayName = typeof type === 'function' ? type.displayName || type.name || 'Unknown' : type;\r\n\r\n    if (key) {\r\n      defineKeyPropWarningGetter(props, displayName);\r\n    }\r\n\r\n    if (ref) {\r\n      defineRefPropWarningGetter(props, displayName);\r\n    }\r\n  }\r\n\r\n  return ReactElement(type, key, ref, self, source, ReactCurrentOwner.current, props);\r\n}\r\n/**\r\n * Create and return a new ReactElement of the given type.\r\n * See https://reactjs.org/docs/react-api.html#createelement\r\n */\r\n\r\nfunction createElement(type, config, children) {\r\n  var propName; // Reserved names are extracted\r\n\r\n  var props = {};\r\n  var key = null;\r\n  var ref = null;\r\n  var self = null;\r\n  var source = null;\r\n\r\n  if (config != null) {\r\n    if (hasValidRef(config)) {\r\n      ref = config.ref;\r\n    }\r\n\r\n    if (hasValidKey(config)) {\r\n      key = '' + config.key;\r\n    }\r\n\r\n    self = config.__self === undefined ? null : config.__self;\r\n    source = config.__source === undefined ? null : config.__source; // Remaining properties are added to a new props object\r\n\r\n    for (propName in config) {\r\n      if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {\r\n        props[propName] = config[propName];\r\n      }\r\n    }\r\n  } // Children can be more than one argument, and those are transferred onto\r\n  // the newly allocated props object.\r\n\r\n\r\n  var childrenLength = arguments.length - 2;\r\n\r\n  if (childrenLength === 1) {\r\n    props.children = children;\r\n  } else if (childrenLength > 1) {\r\n    var childArray = Array(childrenLength);\r\n\r\n    for (var i = 0; i < childrenLength; i++) {\r\n      childArray[i] = arguments[i + 2];\r\n    }\r\n\r\n    {\r\n      if (Object.freeze) {\r\n        Object.freeze(childArray);\r\n      }\r\n    }\r\n\r\n    props.children = childArray;\r\n  } // Resolve default props\r\n\r\n\r\n  if (type && type.defaultProps) {\r\n    var defaultProps = type.defaultProps;\r\n\r\n    for (propName in defaultProps) {\r\n      if (props[propName] === undefined) {\r\n        props[propName] = defaultProps[propName];\r\n      }\r\n    }\r\n  }\r\n\r\n  {\r\n    if (key || ref) {\r\n      var displayName = typeof type === 'function' ? type.displayName || type.name || 'Unknown' : type;\r\n\r\n      if (key) {\r\n        defineKeyPropWarningGetter(props, displayName);\r\n      }\r\n\r\n      if (ref) {\r\n        defineRefPropWarningGetter(props, displayName);\r\n      }\r\n    }\r\n  }\r\n\r\n  return ReactElement(type, key, ref, self, source, ReactCurrentOwner.current, props);\r\n}\r\n/**\r\n * Return a function that produces ReactElements of a given type.\r\n * See https://reactjs.org/docs/react-api.html#createfactory\r\n */\r\n\r\n\r\nfunction cloneAndReplaceKey(oldElement, newKey) {\r\n  var newElement = ReactElement(oldElement.type, newKey, oldElement.ref, oldElement._self, oldElement._source, oldElement._owner, oldElement.props);\r\n  return newElement;\r\n}\r\n/**\r\n * Clone and return a new ReactElement using element as the starting point.\r\n * See https://reactjs.org/docs/react-api.html#cloneelement\r\n */\r\n\r\nfunction cloneElement(element, config, children) {\r\n  if (!!(element === null || element === undefined)) {\r\n    {\r\n      throw Error(\"React.cloneElement(...): The argument must be a React element, but you passed \" + element + \".\");\r\n    }\r\n  }\r\n\r\n  var propName; // Original props are copied\r\n\r\n  var props = _assign({}, element.props); // Reserved names are extracted\r\n\r\n\r\n  var key = element.key;\r\n  var ref = element.ref; // Self is preserved since the owner is preserved.\r\n\r\n  var self = element._self; // Source is preserved since cloneElement is unlikely to be targeted by a\r\n  // transpiler, and the original source is probably a better indicator of the\r\n  // true owner.\r\n\r\n  var source = element._source; // Owner will be preserved, unless ref is overridden\r\n\r\n  var owner = element._owner;\r\n\r\n  if (config != null) {\r\n    if (hasValidRef(config)) {\r\n      // Silently steal the ref from the parent.\r\n      ref = config.ref;\r\n      owner = ReactCurrentOwner.current;\r\n    }\r\n\r\n    if (hasValidKey(config)) {\r\n      key = '' + config.key;\r\n    } // Remaining properties override existing props\r\n\r\n\r\n    var defaultProps;\r\n\r\n    if (element.type && element.type.defaultProps) {\r\n      defaultProps = element.type.defaultProps;\r\n    }\r\n\r\n    for (propName in config) {\r\n      if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {\r\n        if (config[propName] === undefined && defaultProps !== undefined) {\r\n          // Resolve default props\r\n          props[propName] = defaultProps[propName];\r\n        } else {\r\n          props[propName] = config[propName];\r\n        }\r\n      }\r\n    }\r\n  } // Children can be more than one argument, and those are transferred onto\r\n  // the newly allocated props object.\r\n\r\n\r\n  var childrenLength = arguments.length - 2;\r\n\r\n  if (childrenLength === 1) {\r\n    props.children = children;\r\n  } else if (childrenLength > 1) {\r\n    var childArray = Array(childrenLength);\r\n\r\n    for (var i = 0; i < childrenLength; i++) {\r\n      childArray[i] = arguments[i + 2];\r\n    }\r\n\r\n    props.children = childArray;\r\n  }\r\n\r\n  return ReactElement(element.type, key, ref, self, source, owner, props);\r\n}\r\n/**\r\n * Verifies the object is a ReactElement.\r\n * See https://reactjs.org/docs/react-api.html#isvalidelement\r\n * @param {?object} object\r\n * @return {boolean} True if `object` is a ReactElement.\r\n * @final\r\n */\r\n\r\nfunction isValidElement(object) {\r\n  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;\r\n}\r\n\r\nvar SEPARATOR = '.';\r\nvar SUBSEPARATOR = ':';\r\n/**\r\n * Escape and wrap key so it is safe to use as a reactid\r\n *\r\n * @param {string} key to be escaped.\r\n * @return {string} the escaped key.\r\n */\r\n\r\nfunction escape(key) {\r\n  var escapeRegex = /[=:]/g;\r\n  var escaperLookup = {\r\n    '=': '=0',\r\n    ':': '=2'\r\n  };\r\n  var escapedString = ('' + key).replace(escapeRegex, function (match) {\r\n    return escaperLookup[match];\r\n  });\r\n  return '$' + escapedString;\r\n}\r\n/**\r\n * TODO: Test that a single child and an array with one item have the same key\r\n * pattern.\r\n */\r\n\r\n\r\nvar didWarnAboutMaps = false;\r\nvar userProvidedKeyEscapeRegex = /\\/+/g;\r\n\r\nfunction escapeUserProvidedKey(text) {\r\n  return ('' + text).replace(userProvidedKeyEscapeRegex, '$&/');\r\n}\r\n\r\nvar POOL_SIZE = 10;\r\nvar traverseContextPool = [];\r\n\r\nfunction getPooledTraverseContext(mapResult, keyPrefix, mapFunction, mapContext) {\r\n  if (traverseContextPool.length) {\r\n    var traverseContext = traverseContextPool.pop();\r\n    traverseContext.result = mapResult;\r\n    traverseContext.keyPrefix = keyPrefix;\r\n    traverseContext.func = mapFunction;\r\n    traverseContext.context = mapContext;\r\n    traverseContext.count = 0;\r\n    return traverseContext;\r\n  } else {\r\n    return {\r\n      result: mapResult,\r\n      keyPrefix: keyPrefix,\r\n      func: mapFunction,\r\n      context: mapContext,\r\n      count: 0\r\n    };\r\n  }\r\n}\r\n\r\nfunction releaseTraverseContext(traverseContext) {\r\n  traverseContext.result = null;\r\n  traverseContext.keyPrefix = null;\r\n  traverseContext.func = null;\r\n  traverseContext.context = null;\r\n  traverseContext.count = 0;\r\n\r\n  if (traverseContextPool.length < POOL_SIZE) {\r\n    traverseContextPool.push(traverseContext);\r\n  }\r\n}\r\n/**\r\n * @param {?*} children Children tree container.\r\n * @param {!string} nameSoFar Name of the key path so far.\r\n * @param {!function} callback Callback to invoke with each child found.\r\n * @param {?*} traverseContext Used to pass information throughout the traversal\r\n * process.\r\n * @return {!number} The number of children in this subtree.\r\n */\r\n\r\n\r\nfunction traverseAllChildrenImpl(children, nameSoFar, callback, traverseContext) {\r\n  var type = typeof children;\r\n\r\n  if (type === 'undefined' || type === 'boolean') {\r\n    // All of the above are perceived as null.\r\n    children = null;\r\n  }\r\n\r\n  var invokeCallback = false;\r\n\r\n  if (children === null) {\r\n    invokeCallback = true;\r\n  } else {\r\n    switch (type) {\r\n      case 'string':\r\n      case 'number':\r\n        invokeCallback = true;\r\n        break;\r\n\r\n      case 'object':\r\n        switch (children.$$typeof) {\r\n          case REACT_ELEMENT_TYPE:\r\n          case REACT_PORTAL_TYPE:\r\n            invokeCallback = true;\r\n        }\r\n\r\n    }\r\n  }\r\n\r\n  if (invokeCallback) {\r\n    callback(traverseContext, children, // If it's the only child, treat the name as if it was wrapped in an array\r\n    // so that it's consistent if the number of children grows.\r\n    nameSoFar === '' ? SEPARATOR + getComponentKey(children, 0) : nameSoFar);\r\n    return 1;\r\n  }\r\n\r\n  var child;\r\n  var nextName;\r\n  var subtreeCount = 0; // Count of children found in the current subtree.\r\n\r\n  var nextNamePrefix = nameSoFar === '' ? SEPARATOR : nameSoFar + SUBSEPARATOR;\r\n\r\n  if (Array.isArray(children)) {\r\n    for (var i = 0; i < children.length; i++) {\r\n      child = children[i];\r\n      nextName = nextNamePrefix + getComponentKey(child, i);\r\n      subtreeCount += traverseAllChildrenImpl(child, nextName, callback, traverseContext);\r\n    }\r\n  } else {\r\n    var iteratorFn = getIteratorFn(children);\r\n\r\n    if (typeof iteratorFn === 'function') {\r\n      {\r\n        // Warn about using Maps as children\r\n        if (iteratorFn === children.entries) {\r\n          !didWarnAboutMaps ? warning$1(false, 'Using Maps as children is unsupported and will likely yield ' + 'unexpected results. Convert it to a sequence/iterable of keyed ' + 'ReactElements instead.') : void 0;\r\n          didWarnAboutMaps = true;\r\n        }\r\n      }\r\n\r\n      var iterator = iteratorFn.call(children);\r\n      var step;\r\n      var ii = 0;\r\n\r\n      while (!(step = iterator.next()).done) {\r\n        child = step.value;\r\n        nextName = nextNamePrefix + getComponentKey(child, ii++);\r\n        subtreeCount += traverseAllChildrenImpl(child, nextName, callback, traverseContext);\r\n      }\r\n    } else if (type === 'object') {\r\n      var addendum = '';\r\n\r\n      {\r\n        addendum = ' If you meant to render a collection of children, use an array ' + 'instead.' + ReactDebugCurrentFrame.getStackAddendum();\r\n      }\r\n\r\n      var childrenString = '' + children;\r\n\r\n      {\r\n        {\r\n          throw Error(\"Objects are not valid as a React child (found: \" + (childrenString === '[object Object]' ? 'object with keys {' + Object.keys(children).join(', ') + '}' : childrenString) + \").\" + addendum);\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  return subtreeCount;\r\n}\r\n/**\r\n * Traverses children that are typically specified as `props.children`, but\r\n * might also be specified through attributes:\r\n *\r\n * - `traverseAllChildren(this.props.children, ...)`\r\n * - `traverseAllChildren(this.props.leftPanelChildren, ...)`\r\n *\r\n * The `traverseContext` is an optional argument that is passed through the\r\n * entire traversal. It can be used to store accumulations or anything else that\r\n * the callback might find relevant.\r\n *\r\n * @param {?*} children Children tree object.\r\n * @param {!function} callback To invoke upon traversing each child.\r\n * @param {?*} traverseContext Context for traversal.\r\n * @return {!number} The number of children in this subtree.\r\n */\r\n\r\n\r\nfunction traverseAllChildren(children, callback, traverseContext) {\r\n  if (children == null) {\r\n    return 0;\r\n  }\r\n\r\n  return traverseAllChildrenImpl(children, '', callback, traverseContext);\r\n}\r\n/**\r\n * Generate a key string that identifies a component within a set.\r\n *\r\n * @param {*} component A component that could contain a manual key.\r\n * @param {number} index Index that is used if a manual key is not provided.\r\n * @return {string}\r\n */\r\n\r\n\r\nfunction getComponentKey(component, index) {\r\n  // Do some typechecking here since we call this blindly. We want to ensure\r\n  // that we don't block potential future ES APIs.\r\n  if (typeof component === 'object' && component !== null && component.key != null) {\r\n    // Explicit key\r\n    return escape(component.key);\r\n  } // Implicit key determined by the index in the set\r\n\r\n\r\n  return index.toString(36);\r\n}\r\n\r\nfunction forEachSingleChild(bookKeeping, child, name) {\r\n  var func = bookKeeping.func,\r\n      context = bookKeeping.context;\r\n  func.call(context, child, bookKeeping.count++);\r\n}\r\n/**\r\n * Iterates through children that are typically specified as `props.children`.\r\n *\r\n * See https://reactjs.org/docs/react-api.html#reactchildrenforeach\r\n *\r\n * The provided forEachFunc(child, index) will be called for each\r\n * leaf child.\r\n *\r\n * @param {?*} children Children tree container.\r\n * @param {function(*, int)} forEachFunc\r\n * @param {*} forEachContext Context for forEachContext.\r\n */\r\n\r\n\r\nfunction forEachChildren(children, forEachFunc, forEachContext) {\r\n  if (children == null) {\r\n    return children;\r\n  }\r\n\r\n  var traverseContext = getPooledTraverseContext(null, null, forEachFunc, forEachContext);\r\n  traverseAllChildren(children, forEachSingleChild, traverseContext);\r\n  releaseTraverseContext(traverseContext);\r\n}\r\n\r\nfunction mapSingleChildIntoContext(bookKeeping, child, childKey) {\r\n  var result = bookKeeping.result,\r\n      keyPrefix = bookKeeping.keyPrefix,\r\n      func = bookKeeping.func,\r\n      context = bookKeeping.context;\r\n  var mappedChild = func.call(context, child, bookKeeping.count++);\r\n\r\n  if (Array.isArray(mappedChild)) {\r\n    mapIntoWithKeyPrefixInternal(mappedChild, result, childKey, function (c) {\r\n      return c;\r\n    });\r\n  } else if (mappedChild != null) {\r\n    if (isValidElement(mappedChild)) {\r\n      mappedChild = cloneAndReplaceKey(mappedChild, // Keep both the (mapped) and old keys if they differ, just as\r\n      // traverseAllChildren used to do for objects as children\r\n      keyPrefix + (mappedChild.key && (!child || child.key !== mappedChild.key) ? escapeUserProvidedKey(mappedChild.key) + '/' : '') + childKey);\r\n    }\r\n\r\n    result.push(mappedChild);\r\n  }\r\n}\r\n\r\nfunction mapIntoWithKeyPrefixInternal(children, array, prefix, func, context) {\r\n  var escapedPrefix = '';\r\n\r\n  if (prefix != null) {\r\n    escapedPrefix = escapeUserProvidedKey(prefix) + '/';\r\n  }\r\n\r\n  var traverseContext = getPooledTraverseContext(array, escapedPrefix, func, context);\r\n  traverseAllChildren(children, mapSingleChildIntoContext, traverseContext);\r\n  releaseTraverseContext(traverseContext);\r\n}\r\n/**\r\n * Maps children that are typically specified as `props.children`.\r\n *\r\n * See https://reactjs.org/docs/react-api.html#reactchildrenmap\r\n *\r\n * The provided mapFunction(child, key, index) will be called for each\r\n * leaf child.\r\n *\r\n * @param {?*} children Children tree container.\r\n * @param {function(*, int)} func The map function.\r\n * @param {*} context Context for mapFunction.\r\n * @return {object} Object containing the ordered map of results.\r\n */\r\n\r\n\r\nfunction mapChildren(children, func, context) {\r\n  if (children == null) {\r\n    return children;\r\n  }\r\n\r\n  var result = [];\r\n  mapIntoWithKeyPrefixInternal(children, result, null, func, context);\r\n  return result;\r\n}\r\n/**\r\n * Count the number of children that are typically specified as\r\n * `props.children`.\r\n *\r\n * See https://reactjs.org/docs/react-api.html#reactchildrencount\r\n *\r\n * @param {?*} children Children tree container.\r\n * @return {number} The number of children.\r\n */\r\n\r\n\r\nfunction countChildren(children) {\r\n  return traverseAllChildren(children, function () {\r\n    return null;\r\n  }, null);\r\n}\r\n/**\r\n * Flatten a children object (typically specified as `props.children`) and\r\n * return an array with appropriately re-keyed children.\r\n *\r\n * See https://reactjs.org/docs/react-api.html#reactchildrentoarray\r\n */\r\n\r\n\r\nfunction toArray(children) {\r\n  var result = [];\r\n  mapIntoWithKeyPrefixInternal(children, result, null, function (child) {\r\n    return child;\r\n  });\r\n  return result;\r\n}\r\n/**\r\n * Returns the first child in a collection of children and verifies that there\r\n * is only one child in the collection.\r\n *\r\n * See https://reactjs.org/docs/react-api.html#reactchildrenonly\r\n *\r\n * The current implementation of this function assumes that a single child gets\r\n * passed without a wrapper, but the purpose of this helper function is to\r\n * abstract away the particular structure of children.\r\n *\r\n * @param {?object} children Child collection structure.\r\n * @return {ReactElement} The first and only `ReactElement` contained in the\r\n * structure.\r\n */\r\n\r\n\r\nfunction onlyChild(children) {\r\n  if (!isValidElement(children)) {\r\n    {\r\n      throw Error(\"React.Children.only expected to receive a single React element child.\");\r\n    }\r\n  }\r\n\r\n  return children;\r\n}\r\n\r\nfunction createContext(defaultValue, calculateChangedBits) {\r\n  if (calculateChangedBits === undefined) {\r\n    calculateChangedBits = null;\r\n  } else {\r\n    {\r\n      !(calculateChangedBits === null || typeof calculateChangedBits === 'function') ? warningWithoutStack$1(false, 'createContext: Expected the optional second argument to be a ' + 'function. Instead received: %s', calculateChangedBits) : void 0;\r\n    }\r\n  }\r\n\r\n  var context = {\r\n    $$typeof: REACT_CONTEXT_TYPE,\r\n    _calculateChangedBits: calculateChangedBits,\r\n    // As a workaround to support multiple concurrent renderers, we categorize\r\n    // some renderers as primary and others as secondary. We only expect\r\n    // there to be two concurrent renderers at most: React Native (primary) and\r\n    // Fabric (secondary); React DOM (primary) and React ART (secondary).\r\n    // Secondary renderers store their context values on separate fields.\r\n    _currentValue: defaultValue,\r\n    _currentValue2: defaultValue,\r\n    // Used to track how many concurrent renderers this context currently\r\n    // supports within in a single renderer. Such as parallel server rendering.\r\n    _threadCount: 0,\r\n    // These are circular\r\n    Provider: null,\r\n    Consumer: null\r\n  };\r\n  context.Provider = {\r\n    $$typeof: REACT_PROVIDER_TYPE,\r\n    _context: context\r\n  };\r\n  var hasWarnedAboutUsingNestedContextConsumers = false;\r\n  var hasWarnedAboutUsingConsumerProvider = false;\r\n\r\n  {\r\n    // A separate object, but proxies back to the original context object for\r\n    // backwards compatibility. It has a different $$typeof, so we can properly\r\n    // warn for the incorrect usage of Context as a Consumer.\r\n    var Consumer = {\r\n      $$typeof: REACT_CONTEXT_TYPE,\r\n      _context: context,\r\n      _calculateChangedBits: context._calculateChangedBits\r\n    }; // $FlowFixMe: Flow complains about not setting a value, which is intentional here\r\n\r\n    Object.defineProperties(Consumer, {\r\n      Provider: {\r\n        get: function () {\r\n          if (!hasWarnedAboutUsingConsumerProvider) {\r\n            hasWarnedAboutUsingConsumerProvider = true;\r\n            warning$1(false, 'Rendering <Context.Consumer.Provider> is not supported and will be removed in ' + 'a future major release. Did you mean to render <Context.Provider> instead?');\r\n          }\r\n\r\n          return context.Provider;\r\n        },\r\n        set: function (_Provider) {\r\n          context.Provider = _Provider;\r\n        }\r\n      },\r\n      _currentValue: {\r\n        get: function () {\r\n          return context._currentValue;\r\n        },\r\n        set: function (_currentValue) {\r\n          context._currentValue = _currentValue;\r\n        }\r\n      },\r\n      _currentValue2: {\r\n        get: function () {\r\n          return context._currentValue2;\r\n        },\r\n        set: function (_currentValue2) {\r\n          context._currentValue2 = _currentValue2;\r\n        }\r\n      },\r\n      _threadCount: {\r\n        get: function () {\r\n          return context._threadCount;\r\n        },\r\n        set: function (_threadCount) {\r\n          context._threadCount = _threadCount;\r\n        }\r\n      },\r\n      Consumer: {\r\n        get: function () {\r\n          if (!hasWarnedAboutUsingNestedContextConsumers) {\r\n            hasWarnedAboutUsingNestedContextConsumers = true;\r\n            warning$1(false, 'Rendering <Context.Consumer.Consumer> is not supported and will be removed in ' + 'a future major release. Did you mean to render <Context.Consumer> instead?');\r\n          }\r\n\r\n          return context.Consumer;\r\n        }\r\n      }\r\n    }); // $FlowFixMe: Flow complains about missing properties because it doesn't understand defineProperty\r\n\r\n    context.Consumer = Consumer;\r\n  }\r\n\r\n  {\r\n    context._currentRenderer = null;\r\n    context._currentRenderer2 = null;\r\n  }\r\n\r\n  return context;\r\n}\r\n\r\nfunction lazy(ctor) {\r\n  var lazyType = {\r\n    $$typeof: REACT_LAZY_TYPE,\r\n    _ctor: ctor,\r\n    // React uses these fields to store the result.\r\n    _status: -1,\r\n    _result: null\r\n  };\r\n\r\n  {\r\n    // In production, this would just set it on the object.\r\n    var defaultProps;\r\n    var propTypes;\r\n    Object.defineProperties(lazyType, {\r\n      defaultProps: {\r\n        configurable: true,\r\n        get: function () {\r\n          return defaultProps;\r\n        },\r\n        set: function (newDefaultProps) {\r\n          warning$1(false, 'React.lazy(...): It is not supported to assign `defaultProps` to ' + 'a lazy component import. Either specify them where the component ' + 'is defined, or create a wrapping component around it.');\r\n          defaultProps = newDefaultProps; // Match production behavior more closely:\r\n\r\n          Object.defineProperty(lazyType, 'defaultProps', {\r\n            enumerable: true\r\n          });\r\n        }\r\n      },\r\n      propTypes: {\r\n        configurable: true,\r\n        get: function () {\r\n          return propTypes;\r\n        },\r\n        set: function (newPropTypes) {\r\n          warning$1(false, 'React.lazy(...): It is not supported to assign `propTypes` to ' + 'a lazy component import. Either specify them where the component ' + 'is defined, or create a wrapping component around it.');\r\n          propTypes = newPropTypes; // Match production behavior more closely:\r\n\r\n          Object.defineProperty(lazyType, 'propTypes', {\r\n            enumerable: true\r\n          });\r\n        }\r\n      }\r\n    });\r\n  }\r\n\r\n  return lazyType;\r\n}\r\n\r\nfunction forwardRef(render) {\r\n  {\r\n    if (render != null && render.$$typeof === REACT_MEMO_TYPE) {\r\n      warningWithoutStack$1(false, 'forwardRef requires a render function but received a `memo` ' + 'component. Instead of forwardRef(memo(...)), use ' + 'memo(forwardRef(...)).');\r\n    } else if (typeof render !== 'function') {\r\n      warningWithoutStack$1(false, 'forwardRef requires a render function but was given %s.', render === null ? 'null' : typeof render);\r\n    } else {\r\n      !( // Do not warn for 0 arguments because it could be due to usage of the 'arguments' object\r\n      render.length === 0 || render.length === 2) ? warningWithoutStack$1(false, 'forwardRef render functions accept exactly two parameters: props and ref. %s', render.length === 1 ? 'Did you forget to use the ref parameter?' : 'Any additional parameter will be undefined.') : void 0;\r\n    }\r\n\r\n    if (render != null) {\r\n      !(render.defaultProps == null && render.propTypes == null) ? warningWithoutStack$1(false, 'forwardRef render functions do not support propTypes or defaultProps. ' + 'Did you accidentally pass a React component?') : void 0;\r\n    }\r\n  }\r\n\r\n  return {\r\n    $$typeof: REACT_FORWARD_REF_TYPE,\r\n    render: render\r\n  };\r\n}\r\n\r\nfunction isValidElementType(type) {\r\n  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.\r\n  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE);\r\n}\r\n\r\nfunction memo(type, compare) {\r\n  {\r\n    if (!isValidElementType(type)) {\r\n      warningWithoutStack$1(false, 'memo: The first argument must be a component. Instead ' + 'received: %s', type === null ? 'null' : typeof type);\r\n    }\r\n  }\r\n\r\n  return {\r\n    $$typeof: REACT_MEMO_TYPE,\r\n    type: type,\r\n    compare: compare === undefined ? null : compare\r\n  };\r\n}\r\n\r\nfunction resolveDispatcher() {\r\n  var dispatcher = ReactCurrentDispatcher.current;\r\n\r\n  if (!(dispatcher !== null)) {\r\n    {\r\n      throw Error(\"Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\\n1. You might have mismatching versions of React and the renderer (such as React DOM)\\n2. You might be breaking the Rules of Hooks\\n3. You might have more than one copy of React in the same app\\nSee https://fb.me/react-invalid-hook-call for tips about how to debug and fix this problem.\");\r\n    }\r\n  }\r\n\r\n  return dispatcher;\r\n}\r\n\r\nfunction useContext(Context, unstable_observedBits) {\r\n  var dispatcher = resolveDispatcher();\r\n\r\n  {\r\n    !(unstable_observedBits === undefined) ? warning$1(false, 'useContext() second argument is reserved for future ' + 'use in React. Passing it is not supported. ' + 'You passed: %s.%s', unstable_observedBits, typeof unstable_observedBits === 'number' && Array.isArray(arguments[2]) ? '\\n\\nDid you call array.map(useContext)? ' + 'Calling Hooks inside a loop is not supported. ' + 'Learn more at https://fb.me/rules-of-hooks' : '') : void 0; // TODO: add a more generic warning for invalid values.\r\n\r\n    if (Context._context !== undefined) {\r\n      var realContext = Context._context; // Don't deduplicate because this legitimately causes bugs\r\n      // and nobody should be using this in existing code.\r\n\r\n      if (realContext.Consumer === Context) {\r\n        warning$1(false, 'Calling useContext(Context.Consumer) is not supported, may cause bugs, and will be ' + 'removed in a future major release. Did you mean to call useContext(Context) instead?');\r\n      } else if (realContext.Provider === Context) {\r\n        warning$1(false, 'Calling useContext(Context.Provider) is not supported. ' + 'Did you mean to call useContext(Context) instead?');\r\n      }\r\n    }\r\n  }\r\n\r\n  return dispatcher.useContext(Context, unstable_observedBits);\r\n}\r\nfunction useState(initialState) {\r\n  var dispatcher = resolveDispatcher();\r\n  return dispatcher.useState(initialState);\r\n}\r\nfunction useReducer(reducer, initialArg, init) {\r\n  var dispatcher = resolveDispatcher();\r\n  return dispatcher.useReducer(reducer, initialArg, init);\r\n}\r\nfunction useRef(initialValue) {\r\n  var dispatcher = resolveDispatcher();\r\n  return dispatcher.useRef(initialValue);\r\n}\r\nfunction useEffect(create, inputs) {\r\n  var dispatcher = resolveDispatcher();\r\n  return dispatcher.useEffect(create, inputs);\r\n}\r\nfunction useLayoutEffect(create, inputs) {\r\n  var dispatcher = resolveDispatcher();\r\n  return dispatcher.useLayoutEffect(create, inputs);\r\n}\r\nfunction useCallback(callback, inputs) {\r\n  var dispatcher = resolveDispatcher();\r\n  return dispatcher.useCallback(callback, inputs);\r\n}\r\nfunction useMemo(create, inputs) {\r\n  var dispatcher = resolveDispatcher();\r\n  return dispatcher.useMemo(create, inputs);\r\n}\r\nfunction useImperativeHandle(ref, create, inputs) {\r\n  var dispatcher = resolveDispatcher();\r\n  return dispatcher.useImperativeHandle(ref, create, inputs);\r\n}\r\nfunction useDebugValue(value, formatterFn) {\r\n  {\r\n    var dispatcher = resolveDispatcher();\r\n    return dispatcher.useDebugValue(value, formatterFn);\r\n  }\r\n}\r\nvar emptyObject$1 = {};\r\nfunction useResponder(responder, listenerProps) {\r\n  var dispatcher = resolveDispatcher();\r\n\r\n  {\r\n    if (responder == null || responder.$$typeof !== REACT_RESPONDER_TYPE) {\r\n      warning$1(false, 'useResponder: invalid first argument. Expected an event responder, but instead got %s', responder);\r\n      return;\r\n    }\r\n  }\r\n\r\n  return dispatcher.useResponder(responder, listenerProps || emptyObject$1);\r\n}\r\nfunction useTransition(config) {\r\n  var dispatcher = resolveDispatcher();\r\n  return dispatcher.useTransition(config);\r\n}\r\nfunction useDeferredValue(value, config) {\r\n  var dispatcher = resolveDispatcher();\r\n  return dispatcher.useDeferredValue(value, config);\r\n}\r\n\r\nfunction withSuspenseConfig(scope, config) {\r\n  var previousConfig = ReactCurrentBatchConfig.suspense;\r\n  ReactCurrentBatchConfig.suspense = config === undefined ? null : config;\r\n\r\n  try {\r\n    scope();\r\n  } finally {\r\n    ReactCurrentBatchConfig.suspense = previousConfig;\r\n  }\r\n}\r\n\r\n/**\r\n * ReactElementValidator provides a wrapper around a element factory\r\n * which validates the props passed to the element. This is intended to be\r\n * used only in DEV and could be replaced by a static type checker for languages\r\n * that support it.\r\n */\r\nvar propTypesMisspellWarningShown;\r\n\r\n{\r\n  propTypesMisspellWarningShown = false;\r\n}\r\n\r\nvar hasOwnProperty$1 = Object.prototype.hasOwnProperty;\r\n\r\nfunction getDeclarationErrorAddendum() {\r\n  if (ReactCurrentOwner.current) {\r\n    var name = getComponentName(ReactCurrentOwner.current.type);\r\n\r\n    if (name) {\r\n      return '\\n\\nCheck the render method of `' + name + '`.';\r\n    }\r\n  }\r\n\r\n  return '';\r\n}\r\n\r\nfunction getSourceInfoErrorAddendum(source) {\r\n  if (source !== undefined) {\r\n    var fileName = source.fileName.replace(/^.*[\\\\\\/]/, '');\r\n    var lineNumber = source.lineNumber;\r\n    return '\\n\\nCheck your code at ' + fileName + ':' + lineNumber + '.';\r\n  }\r\n\r\n  return '';\r\n}\r\n\r\nfunction getSourceInfoErrorAddendumForProps(elementProps) {\r\n  if (elementProps !== null && elementProps !== undefined) {\r\n    return getSourceInfoErrorAddendum(elementProps.__source);\r\n  }\r\n\r\n  return '';\r\n}\r\n/**\r\n * Warn if there's no key explicitly set on dynamic arrays of children or\r\n * object keys are not valid. This allows us to keep track of children between\r\n * updates.\r\n */\r\n\r\n\r\nvar ownerHasKeyUseWarning = {};\r\n\r\nfunction getCurrentComponentErrorInfo(parentType) {\r\n  var info = getDeclarationErrorAddendum();\r\n\r\n  if (!info) {\r\n    var parentName = typeof parentType === 'string' ? parentType : parentType.displayName || parentType.name;\r\n\r\n    if (parentName) {\r\n      info = \"\\n\\nCheck the top-level render call using <\" + parentName + \">.\";\r\n    }\r\n  }\r\n\r\n  return info;\r\n}\r\n/**\r\n * Warn if the element doesn't have an explicit key assigned to it.\r\n * This element is in an array. The array could grow and shrink or be\r\n * reordered. All children that haven't already been validated are required to\r\n * have a \"key\" property assigned to it. Error statuses are cached so a warning\r\n * will only be shown once.\r\n *\r\n * @internal\r\n * @param {ReactElement} element Element that requires a key.\r\n * @param {*} parentType element's parent's type.\r\n */\r\n\r\n\r\nfunction validateExplicitKey(element, parentType) {\r\n  if (!element._store || element._store.validated || element.key != null) {\r\n    return;\r\n  }\r\n\r\n  element._store.validated = true;\r\n  var currentComponentErrorInfo = getCurrentComponentErrorInfo(parentType);\r\n\r\n  if (ownerHasKeyUseWarning[currentComponentErrorInfo]) {\r\n    return;\r\n  }\r\n\r\n  ownerHasKeyUseWarning[currentComponentErrorInfo] = true; // Usually the current owner is the offender, but if it accepts children as a\r\n  // property, it may be the creator of the child that's responsible for\r\n  // assigning it a key.\r\n\r\n  var childOwner = '';\r\n\r\n  if (element && element._owner && element._owner !== ReactCurrentOwner.current) {\r\n    // Give the component that originally created this child.\r\n    childOwner = \" It was passed a child from \" + getComponentName(element._owner.type) + \".\";\r\n  }\r\n\r\n  setCurrentlyValidatingElement(element);\r\n\r\n  {\r\n    warning$1(false, 'Each child in a list should have a unique \"key\" prop.' + '%s%s See https://fb.me/react-warning-keys for more information.', currentComponentErrorInfo, childOwner);\r\n  }\r\n\r\n  setCurrentlyValidatingElement(null);\r\n}\r\n/**\r\n * Ensure that every element either is passed in a static location, in an\r\n * array with an explicit keys property defined, or in an object literal\r\n * with valid key property.\r\n *\r\n * @internal\r\n * @param {ReactNode} node Statically passed child of any type.\r\n * @param {*} parentType node's parent's type.\r\n */\r\n\r\n\r\nfunction validateChildKeys(node, parentType) {\r\n  if (typeof node !== 'object') {\r\n    return;\r\n  }\r\n\r\n  if (Array.isArray(node)) {\r\n    for (var i = 0; i < node.length; i++) {\r\n      var child = node[i];\r\n\r\n      if (isValidElement(child)) {\r\n        validateExplicitKey(child, parentType);\r\n      }\r\n    }\r\n  } else if (isValidElement(node)) {\r\n    // This element was passed in a valid location.\r\n    if (node._store) {\r\n      node._store.validated = true;\r\n    }\r\n  } else if (node) {\r\n    var iteratorFn = getIteratorFn(node);\r\n\r\n    if (typeof iteratorFn === 'function') {\r\n      // Entry iterators used to provide implicit keys,\r\n      // but now we print a separate warning for them later.\r\n      if (iteratorFn !== node.entries) {\r\n        var iterator = iteratorFn.call(node);\r\n        var step;\r\n\r\n        while (!(step = iterator.next()).done) {\r\n          if (isValidElement(step.value)) {\r\n            validateExplicitKey(step.value, parentType);\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n/**\r\n * Given an element, validate that its props follow the propTypes definition,\r\n * provided by the type.\r\n *\r\n * @param {ReactElement} element\r\n */\r\n\r\n\r\nfunction validatePropTypes(element) {\r\n  var type = element.type;\r\n\r\n  if (type === null || type === undefined || typeof type === 'string') {\r\n    return;\r\n  }\r\n\r\n  var name = getComponentName(type);\r\n  var propTypes;\r\n\r\n  if (typeof type === 'function') {\r\n    propTypes = type.propTypes;\r\n  } else if (typeof type === 'object' && (type.$$typeof === REACT_FORWARD_REF_TYPE || // Note: Memo only checks outer props here.\r\n  // Inner props are checked in the reconciler.\r\n  type.$$typeof === REACT_MEMO_TYPE)) {\r\n    propTypes = type.propTypes;\r\n  } else {\r\n    return;\r\n  }\r\n\r\n  if (propTypes) {\r\n    setCurrentlyValidatingElement(element);\r\n    checkPropTypes(propTypes, element.props, 'prop', name, ReactDebugCurrentFrame.getStackAddendum);\r\n    setCurrentlyValidatingElement(null);\r\n  } else if (type.PropTypes !== undefined && !propTypesMisspellWarningShown) {\r\n    propTypesMisspellWarningShown = true;\r\n    warningWithoutStack$1(false, 'Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?', name || 'Unknown');\r\n  }\r\n\r\n  if (typeof type.getDefaultProps === 'function') {\r\n    !type.getDefaultProps.isReactClassApproved ? warningWithoutStack$1(false, 'getDefaultProps is only used on classic React.createClass ' + 'definitions. Use a static property named `defaultProps` instead.') : void 0;\r\n  }\r\n}\r\n/**\r\n * Given a fragment, validate that it can only be provided with fragment props\r\n * @param {ReactElement} fragment\r\n */\r\n\r\n\r\nfunction validateFragmentProps(fragment) {\r\n  setCurrentlyValidatingElement(fragment);\r\n  var keys = Object.keys(fragment.props);\r\n\r\n  for (var i = 0; i < keys.length; i++) {\r\n    var key = keys[i];\r\n\r\n    if (key !== 'children' && key !== 'key') {\r\n      warning$1(false, 'Invalid prop `%s` supplied to `React.Fragment`. ' + 'React.Fragment can only have `key` and `children` props.', key);\r\n      break;\r\n    }\r\n  }\r\n\r\n  if (fragment.ref !== null) {\r\n    warning$1(false, 'Invalid attribute `ref` supplied to `React.Fragment`.');\r\n  }\r\n\r\n  setCurrentlyValidatingElement(null);\r\n}\r\n\r\nfunction jsxWithValidation(type, props, key, isStaticChildren, source, self) {\r\n  var validType = isValidElementType(type); // We warn in this case but don't throw. We expect the element creation to\r\n  // succeed and there will likely be errors in render.\r\n\r\n  if (!validType) {\r\n    var info = '';\r\n\r\n    if (type === undefined || typeof type === 'object' && type !== null && Object.keys(type).length === 0) {\r\n      info += ' You likely forgot to export your component from the file ' + \"it's defined in, or you might have mixed up default and named imports.\";\r\n    }\r\n\r\n    var sourceInfo = getSourceInfoErrorAddendum(source);\r\n\r\n    if (sourceInfo) {\r\n      info += sourceInfo;\r\n    } else {\r\n      info += getDeclarationErrorAddendum();\r\n    }\r\n\r\n    var typeString;\r\n\r\n    if (type === null) {\r\n      typeString = 'null';\r\n    } else if (Array.isArray(type)) {\r\n      typeString = 'array';\r\n    } else if (type !== undefined && type.$$typeof === REACT_ELEMENT_TYPE) {\r\n      typeString = \"<\" + (getComponentName(type.type) || 'Unknown') + \" />\";\r\n      info = ' Did you accidentally export a JSX literal instead of a component?';\r\n    } else {\r\n      typeString = typeof type;\r\n    }\r\n\r\n    warning$1(false, 'React.jsx: type is invalid -- expected a string (for ' + 'built-in components) or a class/function (for composite ' + 'components) but got: %s.%s', typeString, info);\r\n  }\r\n\r\n  var element = jsxDEV(type, props, key, source, self); // The result can be nullish if a mock or a custom function is used.\r\n  // TODO: Drop this when these are no longer allowed as the type argument.\r\n\r\n  if (element == null) {\r\n    return element;\r\n  } // Skip key warning if the type isn't valid since our key validation logic\r\n  // doesn't expect a non-string/function type and can throw confusing errors.\r\n  // We don't want exception behavior to differ between dev and prod.\r\n  // (Rendering will throw with a helpful message and as soon as the type is\r\n  // fixed, the key warnings will appear.)\r\n\r\n\r\n  if (validType) {\r\n    var children = props.children;\r\n\r\n    if (children !== undefined) {\r\n      if (isStaticChildren) {\r\n        if (Array.isArray(children)) {\r\n          for (var i = 0; i < children.length; i++) {\r\n            validateChildKeys(children[i], type);\r\n          }\r\n\r\n          if (Object.freeze) {\r\n            Object.freeze(children);\r\n          }\r\n        } else {\r\n          warning$1(false, 'React.jsx: Static children should always be an array. ' + 'You are likely explicitly calling React.jsxs or React.jsxDEV. ' + 'Use the Babel transform instead.');\r\n        }\r\n      } else {\r\n        validateChildKeys(children, type);\r\n      }\r\n    }\r\n  }\r\n\r\n  if (hasOwnProperty$1.call(props, 'key')) {\r\n    warning$1(false, 'React.jsx: Spreading a key to JSX is a deprecated pattern. ' + 'Explicitly pass a key after spreading props in your JSX call. ' + 'E.g. <ComponentName {...props} key={key} />');\r\n  }\r\n\r\n  if (type === REACT_FRAGMENT_TYPE) {\r\n    validateFragmentProps(element);\r\n  } else {\r\n    validatePropTypes(element);\r\n  }\r\n\r\n  return element;\r\n} // These two functions exist to still get child warnings in dev\r\n// even with the prod transform. This means that jsxDEV is purely\r\n// opt-in behavior for better messages but that we won't stop\r\n// giving you warnings if you use production apis.\r\n\r\nfunction jsxWithValidationStatic(type, props, key) {\r\n  return jsxWithValidation(type, props, key, true);\r\n}\r\nfunction jsxWithValidationDynamic(type, props, key) {\r\n  return jsxWithValidation(type, props, key, false);\r\n}\r\nfunction createElementWithValidation(type, props, children) {\r\n  var validType = isValidElementType(type); // We warn in this case but don't throw. We expect the element creation to\r\n  // succeed and there will likely be errors in render.\r\n\r\n  if (!validType) {\r\n    var info = '';\r\n\r\n    if (type === undefined || typeof type === 'object' && type !== null && Object.keys(type).length === 0) {\r\n      info += ' You likely forgot to export your component from the file ' + \"it's defined in, or you might have mixed up default and named imports.\";\r\n    }\r\n\r\n    var sourceInfo = getSourceInfoErrorAddendumForProps(props);\r\n\r\n    if (sourceInfo) {\r\n      info += sourceInfo;\r\n    } else {\r\n      info += getDeclarationErrorAddendum();\r\n    }\r\n\r\n    var typeString;\r\n\r\n    if (type === null) {\r\n      typeString = 'null';\r\n    } else if (Array.isArray(type)) {\r\n      typeString = 'array';\r\n    } else if (type !== undefined && type.$$typeof === REACT_ELEMENT_TYPE) {\r\n      typeString = \"<\" + (getComponentName(type.type) || 'Unknown') + \" />\";\r\n      info = ' Did you accidentally export a JSX literal instead of a component?';\r\n    } else {\r\n      typeString = typeof type;\r\n    }\r\n\r\n    warning$1(false, 'React.createElement: type is invalid -- expected a string (for ' + 'built-in components) or a class/function (for composite ' + 'components) but got: %s.%s', typeString, info);\r\n  }\r\n\r\n  var element = createElement.apply(this, arguments); // The result can be nullish if a mock or a custom function is used.\r\n  // TODO: Drop this when these are no longer allowed as the type argument.\r\n\r\n  if (element == null) {\r\n    return element;\r\n  } // Skip key warning if the type isn't valid since our key validation logic\r\n  // doesn't expect a non-string/function type and can throw confusing errors.\r\n  // We don't want exception behavior to differ between dev and prod.\r\n  // (Rendering will throw with a helpful message and as soon as the type is\r\n  // fixed, the key warnings will appear.)\r\n\r\n\r\n  if (validType) {\r\n    for (var i = 2; i < arguments.length; i++) {\r\n      validateChildKeys(arguments[i], type);\r\n    }\r\n  }\r\n\r\n  if (type === REACT_FRAGMENT_TYPE) {\r\n    validateFragmentProps(element);\r\n  } else {\r\n    validatePropTypes(element);\r\n  }\r\n\r\n  return element;\r\n}\r\nfunction createFactoryWithValidation(type) {\r\n  var validatedFactory = createElementWithValidation.bind(null, type);\r\n  validatedFactory.type = type; // Legacy hook: remove it\r\n\r\n  {\r\n    Object.defineProperty(validatedFactory, 'type', {\r\n      enumerable: false,\r\n      get: function () {\r\n        lowPriorityWarningWithoutStack$1(false, 'Factory.type is deprecated. Access the class directly ' + 'before passing it to createFactory.');\r\n        Object.defineProperty(this, 'type', {\r\n          value: type\r\n        });\r\n        return type;\r\n      }\r\n    });\r\n  }\r\n\r\n  return validatedFactory;\r\n}\r\nfunction cloneElementWithValidation(element, props, children) {\r\n  var newElement = cloneElement.apply(this, arguments);\r\n\r\n  for (var i = 2; i < arguments.length; i++) {\r\n    validateChildKeys(arguments[i], newElement.type);\r\n  }\r\n\r\n  validatePropTypes(newElement);\r\n  return newElement;\r\n}\r\n\r\nvar hasBadMapPolyfill;\r\n\r\n{\r\n  hasBadMapPolyfill = false;\r\n\r\n  try {\r\n    var frozenObject = Object.freeze({});\r\n    var testMap = new Map([[frozenObject, null]]);\r\n    var testSet = new Set([frozenObject]); // This is necessary for Rollup to not consider these unused.\r\n    // https://github.com/rollup/rollup/issues/1771\r\n    // TODO: we can remove these if Rollup fixes the bug.\r\n\r\n    testMap.set(0, 0);\r\n    testSet.add(0);\r\n  } catch (e) {\r\n    // TODO: Consider warning about bad polyfills\r\n    hasBadMapPolyfill = true;\r\n  }\r\n}\r\n\r\nfunction createFundamentalComponent(impl) {\r\n  // We use responder as a Map key later on. When we have a bad\r\n  // polyfill, then we can't use it as a key as the polyfill tries\r\n  // to add a property to the object.\r\n  if ( true && !hasBadMapPolyfill) {\r\n    Object.freeze(impl);\r\n  }\r\n\r\n  var fundamantalComponent = {\r\n    $$typeof: REACT_FUNDAMENTAL_TYPE,\r\n    impl: impl\r\n  };\r\n\r\n  {\r\n    Object.freeze(fundamantalComponent);\r\n  }\r\n\r\n  return fundamantalComponent;\r\n}\r\n\r\nfunction createEventResponder(displayName, responderConfig) {\r\n  var getInitialState = responderConfig.getInitialState,\r\n      onEvent = responderConfig.onEvent,\r\n      onMount = responderConfig.onMount,\r\n      onUnmount = responderConfig.onUnmount,\r\n      onRootEvent = responderConfig.onRootEvent,\r\n      rootEventTypes = responderConfig.rootEventTypes,\r\n      targetEventTypes = responderConfig.targetEventTypes,\r\n      targetPortalPropagation = responderConfig.targetPortalPropagation;\r\n  var eventResponder = {\r\n    $$typeof: REACT_RESPONDER_TYPE,\r\n    displayName: displayName,\r\n    getInitialState: getInitialState || null,\r\n    onEvent: onEvent || null,\r\n    onMount: onMount || null,\r\n    onRootEvent: onRootEvent || null,\r\n    onUnmount: onUnmount || null,\r\n    rootEventTypes: rootEventTypes || null,\r\n    targetEventTypes: targetEventTypes || null,\r\n    targetPortalPropagation: targetPortalPropagation || false\r\n  }; // We use responder as a Map key later on. When we have a bad\r\n  // polyfill, then we can't use it as a key as the polyfill tries\r\n  // to add a property to the object.\r\n\r\n  if ( true && !hasBadMapPolyfill) {\r\n    Object.freeze(eventResponder);\r\n  }\r\n\r\n  return eventResponder;\r\n}\r\n\r\nfunction createScope() {\r\n  var scopeComponent = {\r\n    $$typeof: REACT_SCOPE_TYPE\r\n  };\r\n\r\n  {\r\n    Object.freeze(scopeComponent);\r\n  }\r\n\r\n  return scopeComponent;\r\n}\r\n\r\n// Helps identify side effects in render-phase lifecycle hooks and setState\r\n// reducers by double invoking them in Strict Mode.\r\n\r\n // To preserve the \"Pause on caught exceptions\" behavior of the debugger, we\r\n// replay the begin phase of a failed component inside invokeGuardedCallback.\r\n\r\n // Warn about deprecated, async-unsafe lifecycles; relates to RFC #6:\r\n\r\n // Gather advanced timing metrics for Profiler subtrees.\r\n\r\n // Trace which interactions trigger each commit.\r\n\r\n // SSR experiments\r\n\r\n\r\n // Only used in www builds.\r\n\r\n // Only used in www builds.\r\n\r\n // Disable javascript: URL strings in href for XSS protection.\r\n\r\n // React Fire: prevent the value and checked attributes from syncing\r\n// with their related DOM properties\r\n\r\n // These APIs will no longer be \"unstable\" in the upcoming 16.7 release,\r\n// Control this behavior with a flag to support 16.6 minor releases in the meanwhile.\r\n\r\nvar exposeConcurrentModeAPIs = false;\r\n // Experimental React Flare event system and event components support.\r\n\r\nvar enableFlareAPI = false; // Experimental Host Component support.\r\n\r\nvar enableFundamentalAPI = false; // Experimental Scope support.\r\n\r\nvar enableScopeAPI = false; // New API for JSX transforms to target - https://github.com/reactjs/rfcs/pull/107\r\n\r\nvar enableJSXTransformAPI = false; // We will enforce mocking scheduler with scheduler/unstable_mock at some point. (v17?)\r\n// Till then, we warn about the missing mock, but still fallback to a legacy mode compatible version\r\n\r\n // For tests, we flush suspense fallbacks in an act scope;\r\n// *except* in some of our own tests, where we test incremental loading states.\r\n\r\n // Add a callback property to suspense to notify which promises are currently\r\n// in the update queue. This allows reporting and tracing of what is causing\r\n// the user to see a loading state.\r\n// Also allows hydration callbacks to fire when a dehydrated boundary gets\r\n// hydrated or deleted.\r\n\r\n // Part of the simplification of React.createElement so we can eventually move\r\n// from React.createElement to React.jsx\r\n// https://github.com/reactjs/rfcs/blob/createlement-rfc/text/0000-create-element-changes.md\r\n\r\n\r\n\r\n\r\n\r\n // Flag to turn event.target and event.currentTarget in ReactNative from a reactTag to a component instance\r\n\r\nvar React = {\r\n  Children: {\r\n    map: mapChildren,\r\n    forEach: forEachChildren,\r\n    count: countChildren,\r\n    toArray: toArray,\r\n    only: onlyChild\r\n  },\r\n  createRef: createRef,\r\n  Component: Component,\r\n  PureComponent: PureComponent,\r\n  createContext: createContext,\r\n  forwardRef: forwardRef,\r\n  lazy: lazy,\r\n  memo: memo,\r\n  useCallback: useCallback,\r\n  useContext: useContext,\r\n  useEffect: useEffect,\r\n  useImperativeHandle: useImperativeHandle,\r\n  useDebugValue: useDebugValue,\r\n  useLayoutEffect: useLayoutEffect,\r\n  useMemo: useMemo,\r\n  useReducer: useReducer,\r\n  useRef: useRef,\r\n  useState: useState,\r\n  Fragment: REACT_FRAGMENT_TYPE,\r\n  Profiler: REACT_PROFILER_TYPE,\r\n  StrictMode: REACT_STRICT_MODE_TYPE,\r\n  Suspense: REACT_SUSPENSE_TYPE,\r\n  createElement: createElementWithValidation,\r\n  cloneElement: cloneElementWithValidation,\r\n  createFactory: createFactoryWithValidation,\r\n  isValidElement: isValidElement,\r\n  version: ReactVersion,\r\n  __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: ReactSharedInternals\r\n};\r\n\r\nif (exposeConcurrentModeAPIs) {\r\n  React.useTransition = useTransition;\r\n  React.useDeferredValue = useDeferredValue;\r\n  React.SuspenseList = REACT_SUSPENSE_LIST_TYPE;\r\n  React.unstable_withSuspenseConfig = withSuspenseConfig;\r\n}\r\n\r\nif (enableFlareAPI) {\r\n  React.unstable_useResponder = useResponder;\r\n  React.unstable_createResponder = createEventResponder;\r\n}\r\n\r\nif (enableFundamentalAPI) {\r\n  React.unstable_createFundamental = createFundamentalComponent;\r\n}\r\n\r\nif (enableScopeAPI) {\r\n  React.unstable_createScope = createScope;\r\n} // Note: some APIs are added with feature flags.\r\n// Make sure that stable builds for open source\r\n// don't modify the React object to avoid deopts.\r\n// Also let's not expose their names in stable builds.\r\n\r\n\r\nif (enableJSXTransformAPI) {\r\n  {\r\n    React.jsxDEV = jsxWithValidation;\r\n    React.jsx = jsxWithValidationDynamic;\r\n    React.jsxs = jsxWithValidationStatic;\r\n  }\r\n}\r\n\r\n\r\n\r\nvar React$2 = Object.freeze({\r\n\tdefault: React\r\n});\r\n\r\nvar React$3 = ( React$2 && React ) || React$2;\r\n\r\n// TODO: decide on the top-level export form.\r\n// This is hacky but makes it work with both Rollup and Jest.\r\n\r\n\r\nvar react = React$3.default || React$3;\r\n\r\nmodule.exports = react;\r\n  })();\r\n}\r\n\n\n//# sourceURL=webpack:///./node_modules/react/cjs/react.development.js?");
 
-const constructArrayIsActiveItem = (elements, keyItemValue, arrayisactiveitem) => {
-  if (keyItemValue === undefined && arrayisactiveitem) {
-    return arrayisactiveitem;
-  }
-  let length = 0;
-  if (Array.isArray(elements)) {
-    elements.forEach(element => {
-      if (
-        element.type &&
-        typeof element.type === "function"
-      ) {
-        length++;
-      }
-    });
-  }
-  const array = new Array(length).fill(false);
-  if(array.length > keyItemValue){
-    array[keyItemValue] = true;
-  };
-  return array;
-};
+/***/ }),
 
-// Checking Errors for the props theme
-const checkThemeObjectWarningsAndErrors = objectTheme => {
+/***/ "./node_modules/react/index.js":
+/*!*************************************!*\
+  !*** ./node_modules/react/index.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-};
+"use strict";
+eval("\r\n\r\nif (false) {} else {\r\n  module.exports = __webpack_require__(/*! ./cjs/react.development.js */ \"./node_modules/react/cjs/react.development.js\");\r\n}\r\n\n\n//# sourceURL=webpack:///./node_modules/react/index.js?");
 
-const checkBarPropsWarningsAndErrors = props => {
-  if (
-    props.type !== undefined &&
-    !["horizontal", "vertical"].includes(props.type)
-  ) {
-    throw new Error(
-      "Props Input Error :" +
-        "\n- 'type' prop of bar error" +
-        "\n=> Valid Entries are : horizontal, verical"
-    );
-  }
-  if (
-    props.type !== undefined &&
-    props.type === "vertical" &&
-    props.width === undefined
-  ) {
-    console.warn(
-      Tag + " The Width of Vertical Bar is missing (40px is the default value) !"
-    );
-  }
-  if (
-    props.type !== undefined &&
-    props.type === "horizontal" &&
-    props.height === undefined
-  ) {
-    console.warn(
-      Tag + " The Height of Horizontal Bar is missing (40px is the default value) !"
-    );
-  }
-  if(props.theme === undefined){
-      console.log(
-        Tag + " For more stylish look, Note that you can provide the bar with themes check this link => "
-      );
-  }
-};
+/***/ })
 
-const BarStyle = (
-  type = "horizontal",
-  itemsPosition = "left",
-  verticalBarWidth = "85px",
-  horizontalBarHeight = "40px",
-  otherStyles = {},
-  forceStyle = false,
-  stylesFromThemeObject = {}
-) => {
-  if (type === undefined) {
-    type = "horizontal";
-  };
-  if (itemsPosition === undefined) {
-    itemsPosition = "left";
-  };
-  if (verticalBarWidth === undefined) {
-    verticalBarWidth = "85px";
-  };
-  if (horizontalBarHeight === undefined) {
-    horizontalBarHeight = "40px";
-  };
-  if (otherStyles === undefined) {
-    otherStyles = {};
-  };
-  if (forceStyle === undefined) {
-    forceStyle = false;
-  };
-  if (stylesFromThemeObject === undefined) {
-    stylesFromThemeObject = {};
-  };
-  let style = {
-    display: "flex",
-    justifyContent: itemsPosition
-  };
-  if (type === "vertical") {
-    style = {
-      ...style,
-      width: verticalBarWidth,
-      height: "100%",
-      "flexDirection": "column"
-    };
-  } else if (type === "horizontal") {
-    style = {
-      ...style,
-      width: "100%",
-      height: horizontalBarHeight + "px"
-    };
-  }
-  if (forceStyle) {
-    return {
-      ...style,
-      ...stylesFromThemeObject,
-      ...otherStyles
-    };
-  }
-  return {
-    ...otherStyles,
-    ...style,
-    ...stylesFromThemeObject
-  };
-};
-
-// It's the global/Prarent class Bar that we render
-export class Bar extends React.Component {
-  constructor(props) {
-    super(props);
-    let themeObject = {};
-    let type = "horizontal";
-    if(props.theme !== undefined){
-      themeObject = props.theme;
-    }
-    if(props.type !== undefined){
-      type = props.type;
-    }
-    const array = constructArrayIsActiveItem(props.children,
-      props.keyItemValue ? props.keyItemValue : 0
-    );
-    this.state = {
-      arrayisactiveitem: array,
-      themeObject: themeConstruction(themeObject, type)
-    };
-    arrayIsActiveItems = array;
-  }
-
-  static getDerivedStateFromProps(nextProps, prevState){
-    return {arrayisactiveitem: constructArrayIsActiveItem(
-      nextProps.children,
-      nextProps.keyItemValue,
-      prevState.arrayisactiveitem
-    )};
-  }
-
-  updateBarItem = key => isActive => {
-    const { arrayisactiveitem } = this.state;
-    arrayisactiveitem.fill(false);
-    arrayisactiveitem[key] = isActive;
-    indexActiveTab = key;
-    this.setState({ arrayisactiveitem });
-    arrayIsActiveItems = arrayisactiveitem;
-  };
-
-  render() {
-    // Here it will Process The Children And
-    // The Props : Styles , Some Style Logics (showing the underline or not)
-    const { arrayisactiveitem, themeObject } = this.state;
-    let indexItemBar = -1;
-    checkBarPropsWarningsAndErrors(this.props);
-    const {
-      type,
-      itemsPosition,
-      width,
-      height,
-      style,
-      forceStyle,
-      itemWidth
-    } = this.props;
-    themeObject.barItem["active"]["width"] = itemWidth ? (itemWidth + "px") : "auto";
-    themeObject.barItem["inactive"]["width"] = itemWidth ? (itemWidth + "px") : "auto";
-    const AllElements = (
-      <React.Fragment>
-        {Array.isArray(this.props.children) &&
-          this.props.children.map((element, index) => {
-            // Must Refine this condition :
-            if (
-              element.type &&
-              typeof element.type === "function"
-            ) {
-              indexItemBar++;
-              return (
-                <React.Fragment key={index}>
-                  {React.cloneElement(element, {
-                    styles: {
-                      "item": themeObject.barItem,
-                      "subItem": themeObject.subBarItem
-                    },
-                    isTabActive: arrayisactiveitem[indexItemBar],
-                    updateBarItem: this.updateBarItem(indexItemBar)
-                  })}
-                </React.Fragment>
-              );
-            }
-            return <div key={index}>{element}</div>;
-          })}
-      </React.Fragment>
-    );
-    return (
-      <div
-        style={BarStyle(
-          type,
-          itemsPosition,
-          width,
-          height,
-          style,
-          forceStyle,
-          themeObject.bar
-        )}
-      >
-        {AllElements}
-      </div>
-    );
-  }
-}
-
-// This is a work to create commercialized Components for better styling
-
-// This Work will be derived in an independant library for theming
-// And Creating Things more stylishly For All Libraries
-
-// Theme Section
-
-
-// Must Handle Error of The Structure of The Theme Styles :
-
-
-// Palette Color
-
-const Colors = {
-  // From FlatUI Colors :
-  // From White to grey ( Lighted Colors )
-  "cloud": "#ecf0f1",
-  "silver": "#bdc3c7",
-  "concrete": "#95a5a6",
-  "asbestos": "#7f8c8d",
-  // Dark Colors
-  "wet-asphalt": "#34495e",
-  "midnight-blue": "#2c3e50",
-  "silver": "#bdc3c7",
-  "sky-blue": "rgb(88, 140, 198)"
-};
-
-const ColorPalettesStyles = {
-    "standard-v1" : {
-        "innerShadowBarColor": Colors["midnight-blue"],
-        "innerShadowBarItemColor": Colors["midnight-blue"],
-        "innerShadowSubBarItemColor": "black",
-        "borderBarColor": Colors["midnight-blue"],
-        "barColor": Colors["cloud"],
-        "activeBarTextColor": Colors["midnight-blue"],
-        "inactiveBarTextColor": Colors["wet-asphalt"],
-        "subBarColor": Colors["sky-blue"],
-        "activeSubBarTextColor": "white",
-        "inactiveSubBarTextColor":"white",
-        "underlineSubBar": "none",
-        "activeBoxColor": "none",
-        "inactiveBoxColor": "none",
-        "underlineBoxColor": Colors["midnight-blue"],
-    }
-};
-
-// Effects Values
-
-const ElementsEffectStyle = {
-  "normal-v1": {
-    "innerShadowBarValue": "inset 0px 1px 0px",
-    "innerShadowBarItemValue": "inset 0px 1px 2px",
-    "innerShadowSubBarItemValue": "inset 0px 1px 1px",
-    "activeBarItemOpacity": "1",
-    "inactiveBarItemOpacity": "0.8",
-    "activeBarSubItemOpacity": "1",
-    "inactiveBarSubItemOpacity": "0.8"
-  }
-}
-
-// Size Norms
-
-
-const ElementsSizeStyle = {
-    "normal-v1": {
-        "verticalSpacingInnerBarSize": "8px",
-        "horizontalSpacingInnerBarSize": "8px",
-        "verticalSpacingInnerBarItemSize": "4px",
-        "horizontalSpacingInnerBarItemSize": "12px",
-        "verticalSpacingInnerSubBarItemSize": "2px",
-        "horizontalSpacingInnerSubBarItemSize": "4px",
-        "borderBarSize": "1px",
-        "bottomBorderBarItem": "4px solid",
-        "rightBorderBarItem": "2px solid",
-        "activeTextBarSize": "20px",
-        "inactiveTextBarSize": "18px",
-        "activeTextSubBarSize": "14px",
-        "inactiveTextSubBarSize": "14px",
-    }
-};
-
-const constructGlobalStyle = (
-    barType,
-    themeType,
-    colorPalette,
-    elementsSize,
-    elementsEffect
-) => {
-    let changedGlobalStyle = {};
-    changedGlobalStyle["bar"] = {
-      "borderStyle": "solid",
-      "borderWidth": elementsSize.borderBarSize,
-      "backgroundColor": colorPalette.barColor,
-      "borderColor": colorPalette.borderBarColor,
-      "boxShadow": elementsEffect.innerShadowBarValue + " " 
-        + colorPalette.innerShadowBarColor,
-    };
-    let paddingBarItem = "0px 0px";
-    if(barType === "horizontal"){
-      paddingBarItem = elementsSize.verticalSpacingInnerBarSize + " " 
-        + elementsSize.horizontalSpacingInnerBarItemSize;
-    }else if (barType === "vertical"){
-      paddingBarItem = elementsSize.verticalSpacingInnerBarItemSize + " "
-      + elementsSize.horizontalSpacingInnerBarSize;
-    }
-    let commonBarItemStyle = {
-      "cursor": "pointer",
-      "padding": paddingBarItem,
-      "display": "flex",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "textAlign": "center"
-    };
-    changedGlobalStyle["barItem"] = {
-        "active": {
-          ...commonBarItemStyle,
-          "fontSize": elementsSize.activeTextBarSize,
-          "opacity": elementsEffect.activeBarSubItemOpacity
-        },"inactive": {
-          ...commonBarItemStyle,
-          "fontSize": elementsSize.inactiveTextBarSize,
-          "opacity": elementsEffect.inactiveBarSubItemOpacity,    
-        }
-    };
-
-    // Must Refine this to the vertical bar
-    let paddingSubBarItem = elementsSize.horizontalSpacingInnerSubBarItemSize;
-
-    let commonSubBarItemStyle = {
-      "cursor": "pointer",
-      "padding": paddingSubBarItem,
-      "backgroundColor": colorPalette.subBarColor,
-      "color": colorPalette.inactiveSubBarTextColor,
-      "boxShadow": elementsEffect.innerShadowSubBarItemValue + " " + colorPalette.innerShadowSubBarItemColor,
-      "fontSize": elementsSize.activeTextSubBarSize,
-    };
-
-    changedGlobalStyle["subBarItem"] = {
-        "active": {
-          ...commonSubBarItemStyle,
-          "opacity": elementsEffect.activeBarSubItemOpacity
-        },"inactive": {
-          ...commonSubBarItemStyle,
-          "opacity": elementsEffect.inactiveBarSubItemOpacity,    
-        }
-    };
-
-    if(themeType !== undefined && themeType.includes("boxes")) {
-      changedGlobalStyle.barItem.active["boxShadow"] = elementsEffect.innerShadowBarItemValue + " "
-      + colorPalette.innerShadowBarItemColor;
-    }
-    if(
-        themeType !== undefined && themeType.includes("underlined") && themeType.includes("boxes")
-    ){
-      if(barType === "horizontal"){
-        changedGlobalStyle.barItem.active["borderBottom"] = elementsSize.bottomBorderBarItem + " "
-        + colorPalette.underlineBoxColor;
-      }else if (barType === "vertical"){
-        changedGlobalStyle.barItem.active["borderRight"] = elementsSize.rightBorderBarItem + " "
-        + colorPalette.underlineBoxColor;
-      }
-    } else if(
-        themeType !== undefined && themeType.includes("underlined")
-    ) {
-      changedGlobalStyle.barItem.active["textDecorationLine"] = "underline";
-    }
-    // Does not know yet why it don't work
-    // changedGlobalStyle.barItem.active["&:hover"] = changedGlobalStyle.barItem.active;
-    return changedGlobalStyle;
-};
-
-/* 
-    The Structure of the themeObject is : {
-        type , colorPalette , size, effect
-    }
-
-    The Structure of the Result is : {
-        bar , barItem : {active, inactive}, subBarItem : {active, inactive}
-    }
-*/
-
-
-// Must know Also the type of the bar ( vertical or horizontal )
-
-const themeConstruction = (themeObject, barType) => {
-    // Check Warning and Errors of themeObject
-
-    return constructGlobalStyle(
-        barType,
-        themeObject.type ? themeObject.type : "simple",
-        themeObject.colorPalette
-        ? ColorPalettesStyles[themeObject.colorPalette]
-        : ColorPalettesStyles["standard-v1"],
-        themeObject.size
-        ? ElementsSizeStyle[themeObject.size]
-        : ElementsSizeStyle["normal-v1"],
-        themeObject.effect
-        ? ElementsEffectStyle[themeObject.effect]
-        : ElementsEffectStyle["normal-v1"],
-    );
-};
+/******/ });

@@ -1,12 +1,8 @@
 {
   "name": "react-costumized-nav-bar",
-  "version": "1.0.11",
+  "version": "1.0.2",
   "description": "It's a light component manager helper to manage switching off/on light on web elements",
   "main": "index.js",
-  "scripts": {
-    "build": "webpack --config ./webpack.config.js  --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elmehdibm/react-costumized-nav-bar.git"
@@ -28,13 +24,5 @@
   "dependencies": {
     "react": "^16.8.6",
     "webpack": "^4.25.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.1.6",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.4",
-    "webpack-cli": "^3.1.2"
   }
 }
