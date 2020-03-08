@@ -31,7 +31,7 @@ Let's Begin  😎 !
 
 Look at this awesome menu bar done by this lib (I'm sure bleach fans will understand this names 😂 )
 <!-- Here A gif that demonstrate the outcome of the lib -->
-<img src="./images/animated gif demo nav bar.gif">
+![image](https://drive.google.com/uc?export=view&id=1WcBHGZdyPZ4rY3-poAnLgfLtSnNfxBda)
 
 <div id="specs">
 
@@ -201,8 +201,7 @@ import {Bar, BarItem, SubBarItem} from 'react-costumized-nav-bar';
 ...
 ```
 The output result :
-<img src="./images/example1.PNG">
-<br>
+![image](https://drive.google.com/uc?export=view&id=1U1rlUg1jal4hpatOaPoPbIJgRN5-K-Ou)<br>
 <!-- ![image] -->
 
 
