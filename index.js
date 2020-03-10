@@ -199,7 +199,10 @@ export class BarItem extends React.Component {
   }
 }
 
-const constructArrayIsActiveItem = (elements, initialValue) => {
+const constructArrayIsActiveItem = (elements, keyItemValue, arrayisactiveitem) => {
+  if (keyItemValue === undefined && arrayisactiveitem) {
+    return arrayisactiveitem;
+  }
   let length = 0;
   if (Array.isArray(elements)) {
     elements.forEach(element => {
@@ -212,9 +215,9 @@ const constructArrayIsActiveItem = (elements, initialValue) => {
     });
   }
   const array = new Array(length).fill(false);
-  if(array.length > initialValue){
-    array[initialValue] = true;
-  }
+  if(array.length > keyItemValue){
+    array[keyItemValue] = true;
+  };
   return array;
 };
 
@@ -334,7 +337,7 @@ export class Bar extends React.Component {
       type = props.type;
     }
     const array = constructArrayIsActiveItem(props.children,
-      props.initialValue ? props.initialValue : 0
+      props.keyItemValue ? props.keyItemValue : 0
     );
     this.state = {
       arrayisactiveitem: array,
@@ -344,8 +347,10 @@ export class Bar extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState){
-    return {arrayisactiveitem: constructArrayIsActiveItem(nextProps.children,
-      nextProps.initialValue ? nextProps.initialValue : 0
+    return {arrayisactiveitem: constructArrayIsActiveItem(
+      nextProps.children,
+      nextProps.keyItemValue,
+      prevState.arrayisactiveitem
     )};
   }
 
@@ -361,7 +366,6 @@ export class Bar extends React.Component {
   render() {
     // Here it will Process The Children And
     // The Props : Styles , Some Style Logics (showing the underline or not)
-
     const { arrayisactiveitem, themeObject } = this.state;
     let indexItemBar = -1;
     checkBarPropsWarningsAndErrors(this.props);
