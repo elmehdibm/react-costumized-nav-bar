@@ -262,7 +262,14 @@ const checkBarPropsWarningsAndErrors = props => {
   }
 };
 
-const BarStyle = (
+const BarStyle = (stylesFromThemeObject = {}) => {
+  if (stylesFromThemeObject === undefined) {
+    stylesFromThemeObject = {};
+  }
+  return { ...stylesFromThemeObject, width: "100%", boxSizing: "border-box" };
+};
+
+const ContainerStyle = (
   type = "horizontal",
   itemsPosition = "left",
   verticalBarWidth = "85px",
@@ -273,40 +280,40 @@ const BarStyle = (
 ) => {
   if (type === undefined) {
     type = "horizontal";
-  };
+  }
   if (itemsPosition === undefined) {
     itemsPosition = "left";
-  };
+  }
   if (verticalBarWidth === undefined) {
     verticalBarWidth = "85px";
-  };
+  }
   if (horizontalBarHeight === undefined) {
     horizontalBarHeight = "40px";
-  };
+  }
   if (otherStyles === undefined) {
     otherStyles = {};
-  };
+  }
   if (forceStyle === undefined) {
     forceStyle = false;
-  };
+  }
   if (stylesFromThemeObject === undefined) {
     stylesFromThemeObject = {};
-  };
+  }
   let style = {
     display: "flex",
-    justifyContent: itemsPosition
+    justifyContent: itemsPosition,
+    boxSizing: "border-box"
   };
   if (type === "vertical") {
     style = {
       ...style,
       width: verticalBarWidth,
       height: "100%",
-      "flexDirection": "column"
+      flexDirection: "column"
     };
   } else if (type === "horizontal") {
     style = {
       ...style,
-      width: "100%",
       height: horizontalBarHeight + "px"
     };
   }
@@ -319,8 +326,7 @@ const BarStyle = (
   }
   return {
     ...otherStyles,
-    ...style,
-    ...stylesFromThemeObject
+    ...style
   };
 };
 
@@ -330,28 +336,36 @@ export class Bar extends React.Component {
     super(props);
     let themeObject = {};
     let type = "horizontal";
-    if(props.theme !== undefined){
+    let containerClass = "";
+    if (props.theme !== undefined) {
       themeObject = props.theme;
     }
-    if(props.type !== undefined){
+    if (props.type !== undefined) {
       type = props.type;
     }
-    const array = constructArrayIsActiveItem(props.children,
+    if (props.containerClass !== undefined) {
+      containerClass = props.containerClass;
+    }
+    const array = constructArrayIsActiveItem(
+      props.children,
       props.keyItemValue ? props.keyItemValue : 0
     );
     this.state = {
+      containerClass,
       arrayisactiveitem: array,
       themeObject: themeConstruction(themeObject, type)
     };
     arrayIsActiveItems = array;
   }
 
-  static getDerivedStateFromProps(nextProps, prevState){
-    return {arrayisactiveitem: constructArrayIsActiveItem(
-      nextProps.children,
-      nextProps.keyItemValue,
-      prevState.arrayisactiveitem
-    )};
+  static getDerivedStateFromProps(nextProps, prevState) {
+    return {
+      arrayisactiveitem: constructArrayIsActiveItem(
+        nextProps.children,
+        nextProps.keyItemValue,
+        prevState.arrayisactiveitem
+      )
+    };
   }
 
   updateBarItem = key => isActive => {
@@ -366,7 +380,7 @@ export class Bar extends React.Component {
   render() {
     // Here it will Process The Children And
     // The Props : Styles , Some Style Logics (showing the underline or not)
-    const { arrayisactiveitem, themeObject } = this.state;
+    const { arrayisactiveitem, themeObject, containerClass } = this.state;
     let indexItemBar = -1;
     checkBarPropsWarningsAndErrors(this.props);
     const {
@@ -378,24 +392,25 @@ export class Bar extends React.Component {
       forceStyle,
       itemWidth
     } = this.props;
-    themeObject.barItem["active"]["width"] = itemWidth ? (itemWidth + "px") : "auto";
-    themeObject.barItem["inactive"]["width"] = itemWidth ? (itemWidth + "px") : "auto";
+    themeObject.barItem["active"]["width"] = itemWidth
+      ? itemWidth + "px"
+      : "auto";
+    themeObject.barItem["inactive"]["width"] = itemWidth
+      ? itemWidth + "px"
+      : "auto";
     const AllElements = (
       <React.Fragment>
         {Array.isArray(this.props.children) &&
           this.props.children.map((element, index) => {
             // Must Refine this condition :
-            if (
-              element.type &&
-              typeof element.type === "function"
-            ) {
+            if (element.type && typeof element.type === "function") {
               indexItemBar++;
               return (
                 <React.Fragment key={index}>
                   {React.cloneElement(element, {
                     styles: {
-                      "item": themeObject.barItem,
-                      "subItem": themeObject.subBarItem
+                      item: themeObject.barItem,
+                      subItem: themeObject.subBarItem
                     },
                     isTabActive: arrayisactiveitem[indexItemBar],
                     updateBarItem: this.updateBarItem(indexItemBar)
@@ -407,19 +422,22 @@ export class Bar extends React.Component {
           })}
       </React.Fragment>
     );
+
     return (
-      <div
-        style={BarStyle(
-          type,
-          itemsPosition,
-          width,
-          height,
-          style,
-          forceStyle,
-          themeObject.bar
-        )}
-      >
-        {AllElements}
+      <div style={BarStyle(themeObject.bar)}>
+        <div
+          style={ContainerStyle(
+            type,
+            itemsPosition,
+            width,
+            height,
+            style,
+            forceStyle
+          )}
+          className={containerClass}
+        >
+          {AllElements}
+        </div>
       </div>
     );
   }
