@@ -23,6 +23,19 @@ const paperStyle = (itemRef, subitemStyle, isChildrenExist) => {
   return {"display": "none"};
 };
 
+// This is a functional component that checks if the passed down render prop
+// returns a react element, if so it returns it, else it returns "Empty Title"
+// --> check lines 101 and 216
+const ChildElement = ({ element }) => {
+  if (
+    typeof element === "function" &&
+    String(element).includes("createElement")
+  ) {
+    return element();
+  }
+  return <span>Empty Title</span>;
+};
+
 export class SubBarItem extends React.Component {
   constructor(props){
     super(props);
@@ -72,7 +85,9 @@ export class SubBarItem extends React.Component {
       onClick={this.onClickFunc}
       style={this.state.isHovered ? style.active : style.inactive}
     >
-      {title ? title : "Empty Title"}
+      <span>
+         <ChildElement element={render} />
+      </span>
     </div>
     );
   };
@@ -174,7 +189,7 @@ export class BarItem extends React.Component {
           ...addedStyle
         }}
       >
-        <div>{title ? title : "Empty Title"}</div>
+        <ChildElement element={render} />
       </div>
       {
         (showSubs) && <div 
