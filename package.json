@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
+    "@babel/helper-compilation-targets": "^7.12.5",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
