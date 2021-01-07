@@ -12,7 +12,9 @@ module.exports = {
                 ]
             }
         ]
-      },
+    },
+    // Use externals to exclude libraries
+    externals: ['react'],
     output: {
         path: __dirname + '/react-costumized-nav-bar',
         publicPath: '/',

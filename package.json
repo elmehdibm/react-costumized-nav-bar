@@ -25,11 +25,12 @@
     "url": "https://github.com/elmehdibm/react-costumized-nav-bar/issues"
   },
   "homepage": "https://github.com/elmehdibm/react-costumized-nav-bar/#readme",
-  "dependencies": {
-    "react": "^16.8.6",
-    "webpack": "^4.25.1"
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0"
   },
   "devDependencies": {
+    "react": "^16.8.6",
+    "webpack": "^4.25.1",
     "@babel/core": "^7.1.6",
     "@babel/helper-compilation-targets": "^7.12.5",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
