@@ -15,9 +15,13 @@ Let's Begin  😎 !
     <a style="color: currentColor" href="#features"><li>Actual & Upcoming Features</li></a>
 </ul>
 <div style="font-size:18px"> <a  style="color: currentColor" href="#start"> ➡️  Getting Started </a></div>
-    <ul><a style="color:currentColor" href="#prerequisites"><li>Prequisities</li></a>
-    <a style="color:currentColor" href="#install"><li>Installing</li></a>
-    <a style="color:currentColor" href="#props1"><li>Bar Menu Properties</li></a><a style="color:currentColor" href="#props2"><li>BarItem  & SubBarItem Properties</li></a><a style="color:currentColor" href="#example"><li>Example</li></a></ul>
+    <ul>
+        <a style="color:currentColor" href="#prerequisites"><li>Prequisities</li></a>
+        <a style="color:currentColor" href="#install"><li>Installing</li></a>
+        <a style="color:currentColor" href="#props1"><li>Bar Menu Properties</li></a>
+        <a style="color:currentColor" href="#props2"><li>BarItem  & SubBarItem Properties</li></a>
+        <a style="color:currentColor" href="#example"><li>Example</li></a>
+    </ul>
 <div style="font-size:18px"><a style="color:currentColor" href="#styling">➡️ Styling the bar menu</a></div>
 <ul><a style="color:currentColor" href="#styling1"><li>Material Design Theme</li></a>
 <a style="color:currentColor" href="#styling2"><li>Inline Css Styles</li></a></ul>
